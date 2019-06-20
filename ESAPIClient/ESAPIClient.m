@@ -44,12 +44,12 @@ static ESAPIClient *_defaultClient = nil;
     return self;
 }
 
-- (void)upload:(NSString *)URLString
-     fromImage:(UIImage *)image
-    parameters:(nullable NSDictionary *)parameters
-      progress:(nullable void (^)(NSProgress *progress))progress
-       success:(nullable void (^)(NSURLSessionDataTask *task, NSDictionary * _Nullable response))success
-       failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure
+- (void)uploadImage:(UIImage *)image
+                 to:(NSString *)URLString
+         parameters:(nullable NSDictionary *)parameters
+           progress:(nullable void (^)(NSProgress *progress))progress
+            success:(nullable void (^)(NSURLSessionDataTask *task, NSDictionary * _Nullable response))success
+            failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure;
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSData *imageData = UIImageJPEGRepresentation(image, self.imageCompressionQuality);

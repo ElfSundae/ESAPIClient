@@ -99,12 +99,12 @@ NS_ASSUME_NONNULL_BEGIN
  * Upload an image with a multipart `POST` request.
  * @discussion Image will be compressed to data in JPEG format before uploading.
  */
-- (void)upload:(NSString *)URLString
-     fromImage:(UIImage *)image
-    parameters:(nullable NSDictionary *)parameters
-      progress:(nullable void (^)(NSProgress *progress))progress
-       success:(nullable void (^)(NSURLSessionDataTask *task, NSDictionary * _Nullable response))success
-       failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure;
+- (void)uploadImage:(UIImage *)image
+                 to:(NSString *)URLString
+         parameters:(nullable NSDictionary *)parameters
+           progress:(nullable void (^)(NSProgress *progress))progress
+            success:(nullable void (^)(NSURLSessionDataTask *task, NSDictionary * _Nullable response))success
+            failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure;
 
 /**
  * Creates and runs an `NSURLSessionDownloadTask` with the specified URL.
