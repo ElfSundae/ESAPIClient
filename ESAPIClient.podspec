@@ -14,5 +14,6 @@ Pod::Spec.new do |s|
 
   s.source_files = 'ESAPIClient/**/*.{h,m}'
   s.dependency 'AFNetworking/NSURLSession', '~> 3.0'
-  s.dependency 'AFNetworkingExtension', '~> 1.1'
+  s.dependency 'AFNetworkingExtension/Logger', '~> 1.1'
+  s.dependency 'AFNetworkingExtension/Serialization', '~> 1.1'
 end
