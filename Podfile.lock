@@ -14,7 +14,7 @@ PODS:
   - AFNetworkingExtension/Serialization (1.1.0):
     - AFNetworking/Serialization (~> 3.0)
     - ESFramework/Foundation (~> 3.14)
-  - ESAPIClient (0.0.1):
+  - ESAPIClient (1.0.0):
     - AFNetworking/NSURLSession (~> 3.0)
     - AFNetworkingExtension/Logger (~> 1.1)
     - AFNetworkingExtension/Serialization (~> 1.1)
@@ -35,7 +35,7 @@ SPEC CHECKSUMS:
   AFNetworkActivityLogger: e77f68d014becb33c4306a23f56a64906ff72670
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   AFNetworkingExtension: fbd98219769923c7fa5ef3875ff60d14406968f3
-  ESAPIClient: f998f0863462ba943effcc42ad584e7ca88686a1
+  ESAPIClient: 7bb25a0719c8bd0664e8a41fc3b05463625b25ce
   ESFramework: 7333cda5d12fe482985e2bd3d1d4c87b4ac12e33
 
 COCOAPODS: 1.7.2
