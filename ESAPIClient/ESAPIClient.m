@@ -57,7 +57,7 @@ static ESAPIClient *_defaultClient = nil;
             if (failure) {
                 NSError *error = [NSError errorWithDomain:AFURLRequestSerializationErrorDomain
                                                      code:NSURLErrorCannotDecodeContentData
-                                                 userInfo:@{NSLocalizedDescriptionKey: @"Could not generate image data"}];
+                                                 userInfo:@{NSLocalizedDescriptionKey: NSLocalizedStringFromTable(@"Could not generate image data", @"ESAPIClient", nil)}];
                 dispatch_async(self.completionQueue ?: dispatch_get_main_queue(), ^{
                     failure(nil, error);
                 });

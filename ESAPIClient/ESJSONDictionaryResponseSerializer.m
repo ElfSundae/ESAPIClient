@@ -19,7 +19,7 @@
     if (!dict || ![dict isKindOfClass:[NSDictionary class]]) {
         if (error) {
             NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
-            userInfo[NSLocalizedDescriptionKey] = @"Invalid response data";
+            userInfo[NSLocalizedDescriptionKey] = NSLocalizedStringFromTable(@"Invalid response data", @"ESAPIClient", nil);
             userInfo[NSURLErrorFailingURLErrorKey] = response.URL;
             userInfo[AFNetworkingOperationFailingURLResponseErrorKey] = response;
             if (dict) {
