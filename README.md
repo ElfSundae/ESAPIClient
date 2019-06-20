@@ -65,11 +65,9 @@ ESAPIClient.defaultClient = client;
                 dispatch_async(dispatch_get_main_queue(), ^{
                     progressView.progress = progress.fractionCompleted;
                 });
-           }
-           success:^(NSURLSessionDownloadTask * _Nonnull task, NSURL * _Nonnull filePath) {
+           } success:^(NSURLSessionDownloadTask * _Nonnull task, NSURL * _Nonnull filePath) {
                 //
-           }
-           failure:^(NSURLSessionDownloadTask * _Nullable task, NSError * _Nonnull error) {
+           } failure:^(NSURLSessionDownloadTask * _Nullable task, NSError * _Nonnull error) {
                 //
            }];
 ```
