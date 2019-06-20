@@ -50,7 +50,7 @@ ESAPIClient.defaultClient = client;
 
 // Upload file
 [APIClient POST:@"upload/avatar" parameters:@{@"foo": @"bar"} constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-    [formData appendPartWithFileURL:fileURL name:@"file" error:NULL];
+    [formData appendPartWithFileURL:fileURL name:APIClient.defaultMultipartNameForFile error:NULL];
 } success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * _Nullable response) {
     //
 } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
