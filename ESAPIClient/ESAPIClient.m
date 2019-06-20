@@ -39,6 +39,7 @@ static ESAPIClient *_defaultClient = nil;
              setByAddingObjectsFromArray:@[ @"text/html", @"text/plain" ]];
 
         self.defaultMultipartNameForFile = @"file";
+        self.imageCompressionQuality = 0.9;
     }
     return self;
 }
@@ -51,7 +52,7 @@ static ESAPIClient *_defaultClient = nil;
        failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData *imageData = UIImageJPEGRepresentation(image, 0.9);
+        NSData *imageData = UIImageJPEGRepresentation(image, self.imageCompressionQuality);
 
         if (!imageData) {
             if (failure) {
