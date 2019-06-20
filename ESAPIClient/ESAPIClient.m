@@ -39,7 +39,7 @@ static ESAPIClient *_defaultClient = nil;
              setByAddingObjectsFromArray:@[ @"text/html", @"text/plain" ]];
 
         self.defaultMultipartNameForFile = @"file";
-        self.imageCompressionQuality = 0.9;
+        self.imageCompressionQuality = 1.0;
     }
     return self;
 }

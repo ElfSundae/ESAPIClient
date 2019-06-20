@@ -37,7 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * The compression quality for the uploading image, expressed as a value from 0.0 to 1.0.
- * The default quality is 0.9.
+ * The default quality is 1.0.
  * @discusstion The value 0.0 represents the maximum compression (or lowest quality) while the value 1.0 represents the least compression (or best quality).
  */
 @property (nonatomic) CGFloat imageCompressionQuality;
