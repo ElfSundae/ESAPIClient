@@ -95,6 +95,7 @@ NS_ASSUME_NONNULL_BEGIN
                                 success:(nullable void (^)(NSURLSessionDataTask *task, NSDictionary * _Nullable response))success
                                 failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure;
 
+#if !TARGET_OS_OSX
 /**
  * Upload an image with a multipart `POST` request.
  * @discussion Image will be compressed to data in JPEG format before uploading.
@@ -104,7 +105,8 @@ NS_ASSUME_NONNULL_BEGIN
          parameters:(nullable NSDictionary *)parameters
            progress:(nullable void (^)(NSProgress *progress))progress
             success:(nullable void (^)(NSURLSessionDataTask *task, NSDictionary * _Nullable response))success
-            failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure API_UNAVAILABLE(macos);
+            failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure;
+#endif
 
 /**
  * Creates and runs an `NSURLSessionDownloadTask` with the specified URL.
