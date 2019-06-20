@@ -44,6 +44,7 @@ static ESAPIClient *_defaultClient = nil;
     return self;
 }
 
+#if !TARGET_OS_OSX
 - (void)uploadImage:(UIImage *)image
                  to:(NSString *)URLString
          parameters:(nullable NSDictionary *)parameters
@@ -72,6 +73,7 @@ static ESAPIClient *_defaultClient = nil;
         } progress:progress success:success failure:failure];
     });
 }
+#endif
 
 - (nullable NSURLSessionDownloadTask *)download:(NSString *)URLString
                                     toDirectory:(NSURL *)directoryURL

@@ -104,7 +104,7 @@ NS_ASSUME_NONNULL_BEGIN
          parameters:(nullable NSDictionary *)parameters
            progress:(nullable void (^)(NSProgress *progress))progress
             success:(nullable void (^)(NSURLSessionDataTask *task, NSDictionary * _Nullable response))success
-            failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure;
+            failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure API_UNAVAILABLE(macos);
 
 /**
  * Creates and runs an `NSURLSessionDownloadTask` with the specified URL.
