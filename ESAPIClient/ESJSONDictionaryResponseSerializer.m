@@ -18,6 +18,17 @@ ESDefineAssociatedObjectKey(responseMessageKey)
 
 @implementation ESJSONDictionaryResponseSerializer
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.acceptableContentTypes =
+            [self.acceptableContentTypes setByAddingObjectsFromArray:
+             @[ @"text/html", @"text/plain" ]];
+    }
+    return self;
+}
+
 - (NSString *)responseCodeKey
 {
     return objc_getAssociatedObject(self, responseCodeKeyKey);

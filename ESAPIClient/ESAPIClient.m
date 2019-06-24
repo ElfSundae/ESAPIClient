@@ -34,9 +34,6 @@ static ESAPIClient *_defaultClient = nil;
 
         self.responseSerializer = [ESJSONDictionaryResponseSerializer serializer];
         self.responseSerializer.removesKeysWithNullValues = YES;
-        self.responseSerializer.acceptableContentTypes =
-            [self.responseSerializer.acceptableContentTypes
-             setByAddingObjectsFromArray:@[ @"text/html", @"text/plain" ]];
 
         self.defaultMultipartNameForFile = @"file";
         self.imageCompressionQuality = 1.0;
