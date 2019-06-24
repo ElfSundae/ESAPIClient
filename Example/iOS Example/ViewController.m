@@ -26,7 +26,7 @@
 
     [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:CellIdentifier];
 
-    self.data = @[ @"GET", @"JSON Is Not Dictionary" ];
+    self.data = @[ @"GET", @"JSON Is Not Dictionary", @"Code Is Not Success" ];
 }
 
 - (void)GET
@@ -40,6 +40,17 @@
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:error.localizedDescription message:nil preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
         [self presentViewController:alert animated:YES completion:nil];
+    }];
+}
+
+- (void)CodeIsNotSuccess
+{
+    ESAPIClient *client = [[ESAPIClient alloc] initWithBaseURL:[NSURL URLWithString:@"https://httpbin.org/"]];
+    client.responseSerializer.responseCodeKey = @"";
+    [client GET:@"anything" parameters:@{} success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * _Nullable response) {
+
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+
     }];
 }
 

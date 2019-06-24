@@ -30,13 +30,13 @@ static ESAPIClient *_defaultClient = nil;
 {
     self = [super initWithBaseURL:url sessionConfiguration:configuration];
     if (self) {
+        self.defaultMultipartNameForFile = @"file";
+        self.imageCompressionQuality = 1.0;
+
         self.requestSerializer.timeoutInterval = 40;
 
         self.responseSerializer = [ESJSONDictionaryResponseSerializer serializer];
         self.responseSerializer.removesKeysWithNullValues = YES;
-
-        self.defaultMultipartNameForFile = @"file";
-        self.imageCompressionQuality = 1.0;
     }
     return self;
 }
@@ -56,7 +56,7 @@ static ESAPIClient *_defaultClient = nil;
             if (failure) {
                 NSError *error = [NSError errorWithDomain:AFURLRequestSerializationErrorDomain
                                                      code:NSURLErrorCannotDecodeContentData
-                                                 userInfo:@{NSLocalizedDescriptionKey: NSLocalizedStringFromTable(@"Could not generate image data", @"ESAPIClient", nil)}];
+                                                 userInfo:@{ NSLocalizedDescriptionKey: NSLocalizedStringFromTable(@"Could not generate image data", @"ESAPIClient", nil) }];
                 dispatch_async(self.completionQueue ?: dispatch_get_main_queue(), ^{
                     failure(nil, error);
                 });

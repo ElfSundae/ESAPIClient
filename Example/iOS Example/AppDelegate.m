@@ -34,10 +34,10 @@
     NSURL *baseURL = [NSURL URLWithString:@"https://api.github.com"];
     ESAPIClient *client = [[ESAPIClient alloc] initWithBaseURL:baseURL];
     client.requestSerializer.HTTPRequestHeadersBlock = ^NSDictionary<NSString *, id> * _Nullable (NSURLRequest * _Nonnull request, id _Nullable parameters) {
-        return @{@"FooHeader": @"foo"};
+        return @{ @"FooHeader": @"foo" };
     };
     client.requestSerializer.URLQueryParametersBlock = ^NSDictionary<NSString *, id> * _Nullable (NSString * _Nonnull method, NSString * _Nonnull URLString, id _Nullable parameters) {
-        return @{@"_time": @((long)[NSDate date].timeIntervalSince1970)};
+        return @{ @"_time": @((long)[NSDate date].timeIntervalSince1970) };
     };
 #if DEBUG
     client.logger.enabled = YES;
