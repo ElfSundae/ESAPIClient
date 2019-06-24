@@ -13,9 +13,8 @@ Pod::Spec.new do |s|
   s.watchos.deployment_target = '2.0'
 
   s.source_files = 'ESAPIClient/**/*.{h,m}'
-  s.dependency 'AFNetworking/NSURLSession', '~> 3.0'
-  s.dependency 'AFNetworkingExtension/Logger', '~> 1.1'
-  s.dependency 'AFNetworkingExtension/Serialization', '~> 1.1'
-  s.dependency 'ESFramework/Core', '~> 3.0'
-  s.ios.dependency 'MBProgressHUD'
+  s.dependency 'AFNetworkingExtension/Logger', '~> 1.2'
+  s.dependency 'AFNetworkingExtension/NSURLSession', '~> 1.2'
+  s.dependency 'AFNetworkingExtension/Serialization', '~> 1.2'
+  s.dependency 'ESFramework/Core', '~> 3.15'
 end
