@@ -26,7 +26,7 @@
 
     [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:CellIdentifier];
 
-    self.data = @[ @"GET", @"JSON Is Not Dictionary", @"Code Is Not Success" ];
+    self.data = @[ @"GET", @"JSON Is Not Dictionary", @"No Code Key" ];
 }
 
 - (void)GET
@@ -37,21 +37,24 @@
 - (void)JSONIsNotDictionary
 {
     [APIClient GET:@"users/ElfSundae/repos" parameters:nil success:nil failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:error.localizedDescription message:nil preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
-        [self presentViewController:alert animated:YES completion:nil];
+        [self showAlert:error.localizedDescription];
     }];
 }
 
-- (void)CodeIsNotSuccess
+- (void)NoCodeKey
 {
     ESAPIClient *client = [[ESAPIClient alloc] initWithBaseURL:[NSURL URLWithString:@"https://httpbin.org/"]];
-    client.responseSerializer.responseCodeKey = @"";
-    [client GET:@"anything" parameters:@{} success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * _Nullable response) {
-
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-
+    client.responseSerializer.responseCodeKey = @"code";
+    [client GET:@"anything" parameters:nil success:nil failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [self showAlert:error.localizedDescription];
     }];
+}
+
+- (void)showAlert:(NSString *)title
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
