@@ -78,7 +78,7 @@ static ESAPIClient *_defaultClient = nil;
                                         success:(nullable void (^)(NSURLSessionDownloadTask *task, NSURL *filePath))success
                                         failure:(nullable void (^)(NSURLSessionDownloadTask * _Nullable task, NSError *error))failure
 {
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:URLString relativeToURL:self.baseURL]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[self fullURL:URLString]];
 
     __block NSURLSessionDownloadTask *task = nil;
     task = [self downloadTaskWithRequest:request progress:progress destination:^NSURL * _Nonnull (NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {

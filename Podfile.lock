@@ -12,19 +12,18 @@ PODS:
     - AFNetworkActivityLogger (~> 3.0)
     - AFNetworking/NSURLSession (~> 3.0)
     - ESFramework/Core (~> 3.14)
+  - AFNetworkingExtension/NSURLSession (1.2.0):
+    - AFNetworking/NSURLSession (~> 3.0)
   - AFNetworkingExtension/Serialization (1.2.0):
     - AFNetworking/Serialization (~> 3.0)
     - ESFramework/Foundation (~> 3.14)
   - ESAPIClient (1.0.0):
-    - AFNetworking/NSURLSession (~> 3.0)
-    - AFNetworkingExtension/Logger (~> 1.1)
-    - AFNetworkingExtension/Serialization (~> 1.1)
-    - ESFramework/Core (~> 3.0)
-    - MBProgressHUD
+    - AFNetworkingExtension/Logger (~> 1.2)
+    - AFNetworkingExtension/NSURLSession (~> 1.2)
+    - AFNetworkingExtension/Serialization (~> 1.2)
   - ESFramework/Core (3.15.1)
   - ESFramework/Foundation (3.15.1):
     - ESFramework/Core
-  - MBProgressHUD (1.1.0)
 
 DEPENDENCIES:
   - ESAPIClient (from `.`)
@@ -39,9 +38,8 @@ SPEC CHECKSUMS:
   AFNetworkActivityLogger: e77f68d014becb33c4306a23f56a64906ff72670
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   AFNetworkingExtension: edc4cd805bd9df559307cd5b610e68f79a5d417f
-  ESAPIClient: 277ca56ecb486745fa40d9a6232766b27f576f7a
+  ESAPIClient: f0897ae34495700f2ed38d057908523f80f80395
   ESFramework: f5610d26e9dd9470ee89ee65cdbbe8d3714ee906
-  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
 
 COCOAPODS: 1.7.2
 
@@ -53,4 +51,3 @@ SPEC REPOS:
     - AFNetworking
     - AFNetworkingExtension
     - ESFramework
-    - MBProgressHUD

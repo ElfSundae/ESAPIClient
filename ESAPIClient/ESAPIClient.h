@@ -6,7 +6,7 @@
 //  Copyright © 2019 https://0x123.com. All rights reserved.
 //
 
-#import <AFNetworking/AFHTTPSessionManager.h>
+#import <AFNetworkingExtension/AFHTTPSessionManager+ESExtension.h>
 #import <AFNetworkingExtension/AFHTTPRequestSerializer+ESExtension.h>
 #import <AFNetworkingExtension/AFNetworkActivityLogger+ESExtension.h>
 #import "ESJSONDictionaryResponseSerializer.h"
