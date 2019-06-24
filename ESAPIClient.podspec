@@ -16,4 +16,6 @@ Pod::Spec.new do |s|
   s.dependency 'AFNetworking/NSURLSession', '~> 3.0'
   s.dependency 'AFNetworkingExtension/Logger', '~> 1.1'
   s.dependency 'AFNetworkingExtension/Serialization', '~> 1.1'
+  s.dependency 'ESFramework/Core', '~> 3.0'
+  s.ios.dependency 'MBProgressHUD'
 end
