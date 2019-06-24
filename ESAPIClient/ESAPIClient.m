@@ -36,7 +36,6 @@ static ESAPIClient *_defaultClient = nil;
         self.requestSerializer.timeoutInterval = 40;
 
         self.responseSerializer = [ESJSONDictionaryResponseSerializer serializer];
-        self.responseSerializer.removesKeysWithNullValues = YES;
     }
     return self;
 }

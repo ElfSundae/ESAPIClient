@@ -22,6 +22,7 @@ ESDefineAssociatedObjectKey(responseMessageKey)
 {
     self = [super init];
     if (self) {
+        self.removesKeysWithNullValues = YES;
         self.acceptableContentTypes =
             [self.acceptableContentTypes setByAddingObjectsFromArray:
              @[ @"text/html", @"text/plain" ]];
