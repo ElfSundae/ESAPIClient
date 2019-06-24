@@ -16,25 +16,37 @@
 {
     NSDictionary *dict = [super responseObjectForResponse:response data:data error:error];
 
+    // Check whether the response object is a NSDictionary object
     if (!dict || ![dict isKindOfClass:[NSDictionary class]]) {
         if (error) {
-            NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
-            userInfo[NSLocalizedDescriptionKey] = NSLocalizedStringFromTable(@"Invalid response data", @"ESAPIClient", nil);
-            userInfo[NSURLErrorFailingURLErrorKey] = response.URL;
-            userInfo[AFNetworkingOperationFailingURLResponseErrorKey] = response;
-            if (dict) {
-                userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] = dict;
-            }
-
-            *error = [NSError errorWithDomain:AFURLResponseSerializationErrorDomain
-                                         code:NSURLErrorCannotDecodeContentData
-                                     userInfo:userInfo];
+            *error = [self nc_serializationErrorWithCode:NSURLErrorCannotDecodeContentData
+                                             description:NSLocalizedStringFromTable(@"Invalid response data", @"ESAPIClient", nil)
+                                                response:response
+                                            responseData:dict];
         }
 
         dict = nil;
     }
 
     return dict;
+}
+
+- (NSError *)nc_serializationErrorWithCode:(NSInteger)code
+                               description:(NSString *)description
+                                  response:(NSURLResponse *)response
+                              responseData:(nullable id)responseData
+{
+    NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+    userInfo[NSLocalizedDescriptionKey] = description;
+    userInfo[NSURLErrorFailingURLErrorKey] = response.URL;
+    userInfo[AFNetworkingOperationFailingURLResponseErrorKey] = response;
+    if (responseData) {
+        userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] = responseData;
+    }
+
+    return [NSError errorWithDomain:AFURLResponseSerializationErrorDomain
+                               code:code
+                           userInfo:userInfo];
 }
 
 @end
