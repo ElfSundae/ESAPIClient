@@ -97,7 +97,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #if !TARGET_OS_OSX
 /**
- * Upload an image with a multipart `POST` request.
+ * Upload an UIImage as JPEG with a multipart `POST` request.
  * @discussion Image will be compressed to data in JPEG format before uploading.
  */
 - (void)uploadImage:(UIImage *)image
