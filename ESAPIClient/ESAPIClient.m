@@ -162,6 +162,24 @@ static ESAPIClient *_defaultClient = nil;
     return [self POST:URLString parameters:parameters constructingBodyWithBlock:block progress:nil success:success failure:failure];
 }
 
+- (instancetype)initWithCoder:(NSCoder *)decoder
+{
+    self = [super initWithCoder:decoder];
+    if (self) {
+        self.defaultMultipartNameForFile = [decoder decodeObjectOfClass:[NSString class] forKey:NSStringFromSelector(@selector(defaultMultipartNameForFile))];
+        self.imageCompressionQuality = [decoder decodeDoubleForKey:NSStringFromSelector(@selector(imageCompressionQuality))];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)coder
+{
+    [super encodeWithCoder:coder];
+
+    [coder encodeObject:self.defaultMultipartNameForFile forKey:NSStringFromSelector(@selector(defaultMultipartNameForFile))];
+    [coder encodeDouble:self.imageCompressionQuality forKey:NSStringFromSelector(@selector(imageCompressionQuality))];
+}
+
 - (instancetype)copyWithZone:(NSZone *)zone
 {
     ESAPIClient *client = [super copyWithZone:zone];
