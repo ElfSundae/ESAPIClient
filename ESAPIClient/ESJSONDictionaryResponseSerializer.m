@@ -27,11 +27,9 @@
                       responseData:(NSData *)responseData
                              error:(NSError *__autoreleasing *)error
 {
-    if (
-        !dictionary ||
+    if (!dictionary ||
         ![dictionary isKindOfClass:[NSDictionary class]] ||
-        (self.responseCodeKey && !dictionary[self.responseCodeKey])
-    ) {
+        (self.responseCodeKey && !dictionary[self.responseCodeKey])) {
         if (error) {
             NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
             userInfo[NSLocalizedDescriptionKey] = NSLocalizedStringFromTable(@"Invalid response data", @"ESAPIClient", nil);
