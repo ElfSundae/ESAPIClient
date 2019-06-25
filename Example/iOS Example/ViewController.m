@@ -43,9 +43,9 @@
 
 - (void)NoCodeKey
 {
-    ESAPIClient *client = [[ESAPIClient alloc] initWithBaseURL:[NSURL URLWithString:@"https://httpbin.org/"]];
+    ESAPIClient *client = APIClient.copy;
     client.responseSerializer.responseCodeKey = @"code";
-    [client GET:@"anything" parameters:nil success:nil failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    [client GET:@"users/1" parameters:nil success:nil failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [self showAlert:error.localizedDescription];
     }];
 }
