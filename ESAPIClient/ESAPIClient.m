@@ -162,6 +162,8 @@ static ESAPIClient *_defaultClient = nil;
     return [self POST:URLString parameters:parameters constructingBodyWithBlock:block progress:nil success:success failure:failure];
 }
 
+#pragma mark - NSSecureCoding
+
 - (instancetype)initWithCoder:(NSCoder *)decoder
 {
     self = [super initWithCoder:decoder];
@@ -179,6 +181,8 @@ static ESAPIClient *_defaultClient = nil;
     [coder encodeObject:self.defaultMultipartNameForFile forKey:NSStringFromSelector(@selector(defaultMultipartNameForFile))];
     [coder encodeDouble:self.imageCompressionQuality forKey:NSStringFromSelector(@selector(imageCompressionQuality))];
 }
+
+#pragma mark - NSCopying
 
 - (instancetype)copyWithZone:(NSZone *)zone
 {

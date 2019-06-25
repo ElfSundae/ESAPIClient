@@ -66,6 +66,8 @@
     return object;
 }
 
+#pragma mark - NSSecureCoding
+
 - (instancetype)initWithCoder:(NSCoder *)decoder
 {
     self = [super initWithCoder:decoder];
@@ -81,6 +83,8 @@
 
     [coder encodeObject:self.responseCodeKey forKey:NSStringFromSelector(@selector(responseCodeKey))];
 }
+
+#pragma mark - NSCopying
 
 - (instancetype)copyWithZone:(NSZone *)zone
 {
