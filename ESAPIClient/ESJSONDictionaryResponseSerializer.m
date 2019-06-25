@@ -22,23 +22,37 @@
     return self;
 }
 
-- (BOOL)validateResponseDictionary:(NSDictionary *)dictionary
-                          response:(NSURLResponse *)response
-                      responseData:(NSData *)responseData
-                             error:(NSError *__autoreleasing *)error
+- (BOOL)validateResponseObject:(nullable id)object
 {
-    if (!dictionary ||
-        ![dictionary isKindOfClass:[NSDictionary class]] ||
-        (self.responseCodeKey && !dictionary[self.responseCodeKey])) {
+    return ([object isKindOfClass:[NSDictionary class]] &&
+            (!self.responseCodeKey || [(NSDictionary *)object objectForKey:self.responseCodeKey]));
+}
+
+- (id)responseObjectForResponse:(NSURLResponse *)response
+                           data:(NSData *)data
+                          error:(NSError *__autoreleasing *)error
+{
+    NSError *serializerError = nil;
+    id object = [super responseObjectForResponse:response data:data error:&serializerError];
+
+    if (serializerError) {
+        if (error) {
+            *error = serializerError;
+        }
+
+        return nil;
+    }
+
+    if (![self validateResponseObject:object]) {
         if (error) {
             NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
-            userInfo[NSLocalizedDescriptionKey] = NSLocalizedStringFromTable(@"Invalid response data", @"ESAPIClient", nil);
+            userInfo[NSLocalizedDescriptionKey] = NSLocalizedStringFromTable(@"Invalid response object", @"ESAPIClient", nil);
             userInfo[NSURLErrorFailingURLErrorKey] = response.URL;
             userInfo[AFNetworkingOperationFailingURLResponseErrorKey] = response;
-            if (dictionary) {
-                userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] = dictionary;
-            } else if (responseData) {
-                userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] = responseData;
+            if (object) {
+                userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] = object;
+            } else if (data) {
+                userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] = data;
             }
 
             *error = [NSError errorWithDomain:AFURLResponseSerializationErrorDomain
@@ -46,23 +60,10 @@
                                      userInfo:userInfo];
         }
 
-        return NO;
-    }
-
-    return YES;
-}
-
-- (id)responseObjectForResponse:(NSURLResponse *)response
-                           data:(NSData *)data
-                          error:(NSError *__autoreleasing *)error
-{
-    NSDictionary *dictionary = [super responseObjectForResponse:response data:data error:error];
-
-    if (dictionary && ![self validateResponseDictionary:dictionary response:response responseData:data error:error]) {
         return nil;
     }
 
-    return dictionary;
+    return object;
 }
 
 - (instancetype)initWithCoder:(NSCoder *)decoder

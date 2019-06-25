@@ -24,6 +24,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nullable, nonatomic, copy) NSString *responseCodeKey;
 
+#pragma mark - Subclassing
+
+/**
+ * Determines the response object is valid.
+ */
+- (BOOL)validateResponseObject:(nullable id)object;
+
 @end
 
 NS_ASSUME_NONNULL_END
