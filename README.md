@@ -16,7 +16,7 @@ pod 'ESAPIClient'
 
 ## Usage
 
-#### Setup the default API client for your application
+### Setup the default API client for your application
 
 ```objc
 NSURL *baseURL = [NSURL URLWithString:@"https://api.github.com"];
@@ -38,17 +38,21 @@ client.logger.enabled = YES;
 ESAPIClient.defaultClient = client;
 ```
 
-#### Sending API requests
+### Sending API requests
+
+#### GET
 
 ```objc
-// GET
 [APIClient GET:@"api/path" parameters:@{ @"foo": @"bar" } success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * _Nullable response) {
     //
 } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
     //
 }];
+```
 
-// Upload file
+#### Uploading file
+
+```objc
 [APIClient POST:@"upload/avatar" parameters:@{@"foo": @"bar"} constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
     [formData appendPartWithFileURL:fileURL name:APIClient.defaultMultipartNameForFile error:NULL];
 } success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * _Nullable response) {
@@ -56,8 +60,11 @@ ESAPIClient.defaultClient = client;
 } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
     //
 }]
+```
 
-// Download file with progress
+#### Downloading file with progress
+
+```objc
 [APIClient download:@"path/to/file"
         toDirectory:[NSFileManager.defaultManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].firstObject
            filename:NSUUID.UUID.UUIDString
