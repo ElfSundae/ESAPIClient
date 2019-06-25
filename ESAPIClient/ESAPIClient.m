@@ -162,4 +162,14 @@ static ESAPIClient *_defaultClient = nil;
     return [self POST:URLString parameters:parameters constructingBodyWithBlock:block progress:nil success:success failure:failure];
 }
 
+- (instancetype)copyWithZone:(NSZone *)zone
+{
+    ESAPIClient *client = [super copyWithZone:zone];
+
+    client.defaultMultipartNameForFile = [self.defaultMultipartNameForFile copyWithZone:zone];
+    client.imageCompressionQuality = self.imageCompressionQuality;
+
+    return client;
+}
+
 @end

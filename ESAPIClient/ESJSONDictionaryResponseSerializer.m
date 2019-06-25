@@ -67,4 +67,13 @@
     return dictionary;
 }
 
+- (instancetype)copyWithZone:(NSZone *)zone
+{
+    ESJSONDictionaryResponseSerializer *serializer = [super copyWithZone:zone];
+
+    serializer.responseCodeKey = [self.responseCodeKey copyWithZone:zone];
+
+    return serializer;
+}
+
 @end
