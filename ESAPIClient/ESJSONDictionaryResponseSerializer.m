@@ -65,6 +65,22 @@
     return dictionary;
 }
 
+- (instancetype)initWithCoder:(NSCoder *)decoder
+{
+    self = [super initWithCoder:decoder];
+    if (self) {
+        self.responseCodeKey = [decoder decodeObjectOfClass:[NSString class] forKey:NSStringFromSelector(@selector(responseCodeKey))];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)coder
+{
+    [super encodeWithCoder:coder];
+
+    [coder encodeObject:self.responseCodeKey forKey:NSStringFromSelector(@selector(responseCodeKey))];
+}
+
 - (instancetype)copyWithZone:(NSZone *)zone
 {
     ESJSONDictionaryResponseSerializer *serializer = [super copyWithZone:zone];
