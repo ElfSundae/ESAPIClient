@@ -13,7 +13,7 @@
 
 static ESAPIClient *_defaultClient = nil;
 
-+ (ESAPIClient *)defaultClient
++ (instancetype)defaultClient
 {
     if (!_defaultClient) {
         _defaultClient = [self manager];
@@ -21,9 +21,9 @@ static ESAPIClient *_defaultClient = nil;
     return _defaultClient;
 }
 
-+ (void)setDefaultClient:(ESAPIClient *)defaultClient
++ (void)setDefaultClient:(ESAPIClient *)client
 {
-    _defaultClient = defaultClient;
+    _defaultClient = client;
 }
 
 - (instancetype)initWithBaseURL:(NSURL *)url sessionConfiguration:(NSURLSessionConfiguration *)configuration

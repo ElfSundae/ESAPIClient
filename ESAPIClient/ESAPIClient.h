@@ -16,7 +16,12 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * The default API client instance.
  */
-@property (class) ESAPIClient *defaultClient;
++ (instancetype)defaultClient;
+
+/**
+ * Set the default API client instance.
+ */
++ (void)setDefaultClient:(ESAPIClient *)client;
 
 /**
  * The serializer to validate and serialize the HTTP response.
