@@ -89,6 +89,7 @@
 		B9B61D5003A69446AB5456EB /* Pods-Example-macOS Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-macOS Example.release.xcconfig"; path = "Target Support Files/Pods-Example-macOS Example/Pods-Example-macOS Example.release.xcconfig"; sourceTree = "<group>"; };
 		CE819391A1E4228F64A97462 /* libPods-Example-iOS Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Example-iOS Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3F86DAF3FACA1500937D2DD /* Pods-Example-watchOS Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-watchOS Example.debug.xcconfig"; path = "Target Support Files/Pods-Example-watchOS Example/Pods-Example-watchOS Example.debug.xcconfig"; sourceTree = "<group>"; };
+		E708E79222C9103D00604CBF /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		E7BEC83F22BA53E100653343 /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7BEC84122BA53E100653343 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E7BEC84222BA53E100653343 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -201,6 +202,7 @@
 		E7BEC7AC22BA3C3F00653343 = {
 			isa = PBXGroup;
 			children = (
+				E708E79222C9103D00604CBF /* PrefixHeader.pch */,
 				E7BEC84022BA53E100653343 /* iOS Example */,
 				E7BEC85A22BA53FE00653343 /* macOS Example */,
 				E7BEC86F22BA544C00653343 /* tvOS Example */,
@@ -725,6 +727,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -793,6 +796,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

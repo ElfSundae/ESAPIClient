@@ -6,16 +6,10 @@
 //  Copyright © 2019 https://0x123.com. All rights reserved.
 //
 
-#import <AFNetworkingExtension/AFHTTPSessionManager+ESExtension.h>
-#import <AFNetworkingExtension/AFHTTPRequestSerializer+ESExtension.h>
-#import <AFNetworkingExtension/AFNetworkActivityLogger+ESExtension.h>
+#import <AFNetworkingExtension/AFNetworkingExtension.h>
 #import "ESJSONDictionaryResponseSerializer.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
-#ifndef APIClient
-#define APIClient [ESAPIClient defaultClient]
-#endif
 
 @interface ESAPIClient : AFHTTPSessionManager
 

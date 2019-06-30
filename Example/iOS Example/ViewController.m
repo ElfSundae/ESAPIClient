@@ -7,9 +7,6 @@
 //
 
 #import "ViewController.h"
-#import <ESAPIClient/ESAPIClient.h>
-
-#define CellIdentifier @"cellID"
 
 @interface ViewController ()
 
@@ -24,7 +21,7 @@
     [super viewDidLoad];
     self.title = @"ESAPIClient Example";
 
-    [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:CellIdentifier];
+    [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:NSStringFromClass(UITableViewCell.class)];
 
     self.data = @[ @"GET", @"JSON Is Not Dictionary", @"No Code Key",
                    @"NSCoding", @"NSCopying" ];
@@ -88,7 +85,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(UITableViewCell.class) forIndexPath:indexPath];
     cell.textLabel.text = self.data[indexPath.row];
     return cell;
 }
