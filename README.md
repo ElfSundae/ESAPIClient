@@ -35,7 +35,17 @@ client.logger.enabled = YES;
 [client.logger setLogLevel:AFLoggerLevelDebug];
 #endif
 
-ESAPIClient.defaultClient = client;
+[ESAPIClient setDefaultClient:client];
+```
+
+Optionally you may define a macro for the default client in the prefix header file:
+
+```objc
+#import <ESAPIClient/ESAPIClient.h>
+
+#ifndef APIClient
+#define APIClient [ESAPIClient defaultClient]
+#endif
 ```
 
 ### Sending API requests
