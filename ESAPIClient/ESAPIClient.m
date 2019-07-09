@@ -31,7 +31,7 @@ static ESAPIClient *_defaultClient = nil;
     self = [super initWithBaseURL:url sessionConfiguration:configuration];
     if (self) {
         self.defaultMultipartNameForFile = @"file";
-        self.imageCompressionQuality = 1.0;
+        self.imageCompressionQuality = 0.9;
 
         self.requestSerializer.timeoutInterval = 40;
 
