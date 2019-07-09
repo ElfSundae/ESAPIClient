@@ -14,16 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ESAPIClient : AFHTTPSessionManager
 
 /**
- * The default API client instance.
- */
-+ (instancetype)defaultClient;
-
-/**
- * Set the default API client instance.
- */
-+ (void)setDefaultClient:(ESAPIClient *)client;
-
-/**
  * The serializer to validate and serialize the HTTP response.
  */
 @property (nonatomic, strong) ESJSONDictionaryResponseSerializer *responseSerializer;

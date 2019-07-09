@@ -11,31 +11,15 @@
 @implementation ESAPIClient
 @dynamic responseSerializer;
 
-static ESAPIClient *_defaultClient = nil;
-
-+ (instancetype)defaultClient
-{
-    if (!_defaultClient) {
-        _defaultClient = [self manager];
-    }
-    return _defaultClient;
-}
-
-+ (void)setDefaultClient:(ESAPIClient *)client
-{
-    _defaultClient = client;
-}
-
 - (instancetype)initWithBaseURL:(NSURL *)url sessionConfiguration:(NSURLSessionConfiguration *)configuration
 {
     self = [super initWithBaseURL:url sessionConfiguration:configuration];
     if (self) {
+        self.requestSerializer.timeoutInterval = 40;
+        self.responseSerializer = [ESJSONDictionaryResponseSerializer serializer];
+        
         self.defaultMultipartNameForFile = @"file";
         self.imageCompressionQuality = 0.9;
-
-        self.requestSerializer.timeoutInterval = 40;
-
-        self.responseSerializer = [ESJSONDictionaryResponseSerializer serializer];
     }
     return self;
 }
