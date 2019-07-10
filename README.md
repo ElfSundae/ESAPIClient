@@ -35,7 +35,7 @@ client.logger.enabled = YES;
 [client.logger setLogLevel:AFLoggerLevelDebug];
 #endif
 
-[ESAPIClient setDefaultClient:client];
+ESAPIClient.defaultClient = client;
 ```
 
 Optionally you may define a macro for the default client in the prefix header file:
