@@ -11,6 +11,21 @@
 @implementation ESAPIClient
 @dynamic responseSerializer;
 
+static ESAPIClient *_defaultClient = nil;
+
++ (instancetype)defaultClient
+{
+    if (!_defaultClient) {
+        _defaultClient = [self manager];
+    }
+    return _defaultClient;
+}
+
++ (void)setDefaultClient:(ESAPIClient *)client
+{
+    _defaultClient = client;
+}
+
 - (instancetype)initWithBaseURL:(NSURL *)url sessionConfiguration:(NSURLSessionConfiguration *)configuration
 {
     self = [super initWithBaseURL:url sessionConfiguration:configuration];
