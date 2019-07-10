@@ -8,10 +8,10 @@
 
 #import "ESAPIClient.h"
 
+static ESAPIClient *_defaultClient = nil;
+
 @implementation ESAPIClient
 @dynamic responseSerializer;
-
-static ESAPIClient *_defaultClient = nil;
 
 + (instancetype)defaultClient
 {
@@ -23,7 +23,10 @@ static ESAPIClient *_defaultClient = nil;
 
 + (void)setDefaultClient:(ESAPIClient *)client
 {
+    NSString *key = NSStringFromSelector(@selector(defaultClient));
+    [self willChangeValueForKey:key];
     _defaultClient = client;
+    [self didChangeValueForKey:key];
 }
 
 - (instancetype)initWithBaseURL:(NSURL *)url sessionConfiguration:(NSURLSessionConfiguration *)configuration

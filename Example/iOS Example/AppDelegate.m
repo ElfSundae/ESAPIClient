@@ -43,7 +43,7 @@
     [client.logger setLogLevel:AFLoggerLevelDebug];
 #endif
 
-    [ESAPIClient setDefaultClient:client];
+    ESAPIClient.defaultClient = client;
 }
 
 @end
