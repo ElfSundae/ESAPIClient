@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <ESAPIClient/ESAPIClient.h>
 
 @interface ViewController ()
 
@@ -29,19 +30,19 @@
 
 - (void)GET
 {
-    [APIClient GET:@"users/ElfSundae" parameters:nil success:nil failure:nil];
+    [ESAPIClient.defaultClient GET:@"users/ElfSundae" parameters:nil success:nil failure:nil];
 }
 
 - (void)JSONIsNotDictionary
 {
-    [APIClient GET:@"users/ElfSundae/repos" parameters:nil success:nil failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    [ESAPIClient.defaultClient GET:@"users/ElfSundae/repos" parameters:nil success:nil failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [self showAlert:error.localizedDescription];
     }];
 }
 
 - (void)NoCodeKey
 {
-    ESAPIClient *client = APIClient.copy;
+    ESAPIClient *client = ESAPIClient.defaultClient.copy;
     client.responseSerializer.responseCodeKey = @"code";
     [client GET:@"users/1" parameters:nil success:nil failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [self showAlert:error.localizedDescription];
