@@ -43,8 +43,8 @@ Optionally you may define a macro for the default client in the prefix header fi
 ```objc
 #import <ESAPIClient/ESAPIClient.h>
 
-#ifndef APIClient
-#define APIClient [ESAPIClient defaultClient]
+#ifndef API
+#define API [ESAPIClient defaultClient]
 #endif
 ```
 
@@ -53,7 +53,7 @@ Optionally you may define a macro for the default client in the prefix header fi
 #### GET
 
 ```objc
-[APIClient GET:@"api/path" parameters:@{ @"foo": @"bar" } success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * _Nullable response) {
+[ESAPIClient.defaultClient GET:@"api/path" parameters:@{ @"foo": @"bar" } success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * _Nullable response) {
     //
 } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
     //
@@ -63,30 +63,31 @@ Optionally you may define a macro for the default client in the prefix header fi
 #### Uploading file
 
 ```objc
-[APIClient POST:@"upload/avatar" parameters:@{@"foo": @"bar"} constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+[ESAPIClient.defaultClient POST:@"upload/avatar" parameters:@{@"foo": @"bar"} constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
     [formData appendPartWithFileURL:fileURL name:APIClient.defaultMultipartNameForFile error:NULL];
 } success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * _Nullable response) {
     //
 } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
     //
-}]
+}];
 ```
 
 #### Downloading file with progress
 
 ```objc
-[APIClient download:@"path/to/file"
-        toDirectory:[NSFileManager.defaultManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].firstObject
-           filename:NSUUID.UUID.UUIDString
-           progress:^(NSProgress * _Nonnull progress) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    progressView.progress = progress.fractionCompleted;
-                });
-           } success:^(NSURLSessionDownloadTask * _Nonnull task, NSURL * _Nonnull filePath) {
-                //
-           } failure:^(NSURLSessionDownloadTask * _Nullable task, NSError * _Nonnull error) {
-                //
-           }];
+[ESAPIClient.defaultClient
+    download:@"http://path/to/file"
+    toDirectory:[NSFileManager.defaultManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].firstObject
+    filename:NSUUID.UUID.UUIDString
+    progress:^(NSProgress * _Nonnull progress) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            progressView.progress = progress.fractionCompleted;
+        });
+    } success:^(NSURLSessionDownloadTask * _Nonnull task, NSURL * _Nonnull filePath) {
+        //
+    } failure:^(NSURLSessionDownloadTask * _Nullable task, NSError * _Nonnull error) {
+        //
+    }];
 ```
 
 ## License
