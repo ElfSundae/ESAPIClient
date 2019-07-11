@@ -16,7 +16,7 @@ static ESAPIClient *_defaultClient = nil;
 + (instancetype)defaultClient
 {
     if (!_defaultClient) {
-        _defaultClient = [self manager];
+        _defaultClient = [[self alloc] initWithBaseURL:nil sessionConfiguration:nil];
     }
     return _defaultClient;
 }
