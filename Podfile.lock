@@ -8,26 +8,26 @@ PODS:
   - AFNetworking/Reachability (3.2.1)
   - AFNetworking/Security (3.2.1)
   - AFNetworking/Serialization (3.2.1)
-  - AFNetworkingExtension (1.2.1):
-    - AFNetworkingExtension/Logger (= 1.2.1)
-    - AFNetworkingExtension/NSURLSession (= 1.2.1)
-    - AFNetworkingExtension/Reachability (= 1.2.1)
-    - AFNetworkingExtension/Serialization (= 1.2.1)
-  - AFNetworkingExtension/Logger (1.2.1):
+  - AFNetworkingExtension (1.3.0):
+    - AFNetworkingExtension/Logger (= 1.3.0)
+    - AFNetworkingExtension/NSURLSession (= 1.3.0)
+    - AFNetworkingExtension/Reachability (= 1.3.0)
+    - AFNetworkingExtension/Serialization (= 1.3.0)
+  - AFNetworkingExtension/Logger (1.3.0):
     - AFNetworkActivityLogger (~> 3.0)
     - AFNetworking/NSURLSession (~> 3.0)
-    - ESFramework/Core (~> 3.14)
-  - AFNetworkingExtension/NSURLSession (1.2.1):
+    - ESFramework/Core (~> 3.18)
+  - AFNetworkingExtension/NSURLSession (1.3.0):
     - AFNetworking/NSURLSession (~> 3.0)
-  - AFNetworkingExtension/Reachability (1.2.1):
+  - AFNetworkingExtension/Reachability (1.3.0):
     - AFNetworking/Reachability (>= 2.0)
-  - AFNetworkingExtension/Serialization (1.2.1):
+  - AFNetworkingExtension/Serialization (1.3.0):
     - AFNetworking/Serialization (~> 3.0)
-    - ESFramework/Foundation (~> 3.14)
-  - ESAPIClient (1.4.1):
-    - AFNetworkingExtension (~> 1.2)
-  - ESFramework/Core (3.15.1)
-  - ESFramework/Foundation (3.15.1):
+    - ESFramework/Foundation (~> 3.18)
+  - ESAPIClient (1.4.2):
+    - AFNetworkingExtension (~> 1.3)
+  - ESFramework/Core (3.18.0)
+  - ESFramework/Foundation (3.18.0):
     - ESFramework/Core
 
 DEPENDENCIES:
@@ -47,10 +47,10 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworkActivityLogger: e77f68d014becb33c4306a23f56a64906ff72670
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  AFNetworkingExtension: 747253b92a65e3c1c00615e19b4a5da45c44be65
-  ESAPIClient: 56708f0527783366ca9c4d5c82d345a3a8795270
-  ESFramework: f5610d26e9dd9470ee89ee65cdbbe8d3714ee906
+  AFNetworkingExtension: 2b1ec2ca93973d183d7beaf96a799e1aee456fdf
+  ESAPIClient: 90e4502e9d9826b752c05c4d76472bd3b197f09e
+  ESFramework: 8b2ba4521aed84ae506e84d4c5d16441cbd949c8
 
 PODFILE CHECKSUM: 82061e582fce70c6350e231740c5ba6251df6fcc
 
-COCOAPODS: 1.7.4
+COCOAPODS: 1.7.5

@@ -1,9 +1,10 @@
 Pod::Spec.new do |s|
   s.name        = 'ESAPIClient'
-  s.version     = '1.4.1'
+  s.version     = '1.4.2'
   s.license     = { :type => 'MIT', :file => 'LICENSE' }
   s.summary     = 'ESAPIClient is an API client library built on top of AFNetworking and AFNetworkingExtension.'
   s.homepage    = 'https://github.com/ElfSundae/ESAPIClient'
+  s.social_media_url = 'https://twitter.com/ElfSundae'
   s.authors     = { 'Elf Sundae' => 'https://0x123.com' }
   s.source      = { :git => 'https://github.com/ElfSundae/ESAPIClient.git', :tag => s.version }
 
@@ -13,5 +14,5 @@ Pod::Spec.new do |s|
   s.watchos.deployment_target = '2.0'
 
   s.source_files = 'ESAPIClient/**/*.{h,m}'
-  s.dependency 'AFNetworkingExtension', '~> 1.2'
+  s.dependency 'AFNetworkingExtension', '~> 1.3'
 end
