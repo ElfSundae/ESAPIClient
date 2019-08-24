@@ -30,7 +30,7 @@ client.requestSerializer.URLQueryParametersBlock = ^NSDictionary<NSString *, id>
     return @{@"_time": @((long)[NSDate date].timeIntervalSince1970)};
 };
 
-#if DEBUG
+#if defined(DEBUG) && DEBUG
 client.logger.enabled = YES;
 [client.logger setLogLevel:AFLoggerLevelDebug];
 #endif
