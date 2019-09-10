@@ -29,10 +29,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) ESJSONDictionaryResponseSerializer *responseSerializer;
 
 /**
- * The default value of multipart `name` key for uploading file.
+ * The default value of multipart `name` for uploading file.
  * @discussion The default value is "file".
  */
-@property (nonatomic, copy) NSString *defaultMultipartNameForFile;
+@property (nonatomic, copy) NSString *fileMultipartName;
 
 /**
  * The compression quality for the uploading image, expressed as a value from 0.0 to 1.0.

@@ -52,24 +52,24 @@
 - (void)NSCoding
 {
     ESAPIClient *client = [[ESAPIClient alloc] init];
-    client.defaultMultipartNameForFile = @"uploadfile";
+    client.fileMultipartName = @"uploadfile";
     client.imageCompressionQuality = 0.6;
     client.responseSerializer.responseCodeKey = @"code";
 
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:client];
     ESAPIClient *decoded = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-    NSLog(@"%@ %f %@", decoded.defaultMultipartNameForFile, decoded.imageCompressionQuality, decoded.responseSerializer.responseCodeKey);
+    NSLog(@"%@ %f %@", decoded.fileMultipartName, decoded.imageCompressionQuality, decoded.responseSerializer.responseCodeKey);
 }
 
 - (void)NSCopying
 {
     ESAPIClient *client = [[ESAPIClient alloc] init];
-    client.defaultMultipartNameForFile = @"uploadfile";
+    client.fileMultipartName = @"uploadfile";
     client.imageCompressionQuality = 0.6;
     client.responseSerializer.responseCodeKey = @"code";
 
     ESAPIClient *copying = [client copy];
-    NSLog(@"%@ %f %@", copying.defaultMultipartNameForFile, copying.imageCompressionQuality, copying.responseSerializer.responseCodeKey);
+    NSLog(@"%@ %f %@", copying.fileMultipartName, copying.imageCompressionQuality, copying.responseSerializer.responseCodeKey);
 }
 
 - (void)showAlert:(NSString *)title

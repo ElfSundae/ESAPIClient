@@ -36,7 +36,7 @@ static ESAPIClient *_defaultClient = nil;
         self.requestSerializer.timeoutInterval = 40;
         self.responseSerializer = [ESJSONDictionaryResponseSerializer serializer];
 
-        self.defaultMultipartNameForFile = @"file";
+        self.fileMultipartName = @"file";
         self.imageCompressionQuality = 0.9;
     }
     return self;
@@ -67,7 +67,7 @@ static ESAPIClient *_defaultClient = nil;
         }
 
         [self POST:URLString parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-            [formData appendPartWithFileData:imageData name:self.defaultMultipartNameForFile fileName:@"image.jpg" mimeType:@"image/jpeg"];
+            [formData appendPartWithFileData:imageData name:self.fileMultipartName fileName:@"image.jpg" mimeType:@"image/jpeg"];
         } progress:progress success:success failure:failure];
     });
 }
@@ -170,7 +170,7 @@ static ESAPIClient *_defaultClient = nil;
 {
     self = [super initWithCoder:decoder];
     if (self) {
-        self.defaultMultipartNameForFile = [decoder decodeObjectOfClass:[NSString class] forKey:NSStringFromSelector(@selector(defaultMultipartNameForFile))];
+        self.fileMultipartName = [decoder decodeObjectOfClass:[NSString class] forKey:NSStringFromSelector(@selector(fileMultipartName))];
         self.imageCompressionQuality = [decoder decodeDoubleForKey:NSStringFromSelector(@selector(imageCompressionQuality))];
     }
     return self;
@@ -180,7 +180,7 @@ static ESAPIClient *_defaultClient = nil;
 {
     [super encodeWithCoder:coder];
 
-    [coder encodeObject:self.defaultMultipartNameForFile forKey:NSStringFromSelector(@selector(defaultMultipartNameForFile))];
+    [coder encodeObject:self.fileMultipartName forKey:NSStringFromSelector(@selector(fileMultipartName))];
     [coder encodeDouble:self.imageCompressionQuality forKey:NSStringFromSelector(@selector(imageCompressionQuality))];
 }
 
@@ -190,7 +190,7 @@ static ESAPIClient *_defaultClient = nil;
 {
     ESAPIClient *client = [super copyWithZone:zone];
 
-    client.defaultMultipartNameForFile = [self.defaultMultipartNameForFile copyWithZone:zone];
+    client.fileMultipartName = [self.fileMultipartName copyWithZone:zone];
     client.imageCompressionQuality = self.imageCompressionQuality;
 
     return client;
