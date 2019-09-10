@@ -14,5 +14,5 @@ Pod::Spec.new do |s|
   s.watchos.deployment_target = '2.0'
 
   s.source_files = 'ESAPIClient/**/*.{h,m}'
-  s.dependency 'AFNetworkingExtension', '~> 1.3'
+  s.dependency 'AFNetworkingExtension', '~> 1.4'
 end
