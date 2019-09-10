@@ -6,15 +6,15 @@
 //  Copyright © 2019 https://0x123.com. All rights reserved.
 //
 
-#import <AFNetworking/AFURLResponseSerialization.h>
+#import "ESJSONResponseSerializer.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- * A subclass of `AFJSONResponseSerializer` that only accept NSDictionary as
+ * A subclass of `ESJSONResponseSerializer` that only accept NSDictionary as
  * the decoded response object.
  */
-@interface ESJSONDictionaryResponseSerializer : AFJSONResponseSerializer
+@interface ESJSONDictionaryResponseSerializer : ESJSONResponseSerializer
 
 /**
  * The "code" key in the response dictionary.
@@ -23,13 +23,6 @@ NS_ASSUME_NONNULL_BEGIN
  * will return failure with error.
  */
 @property (nullable, nonatomic, copy) NSString *responseCodeKey;
-
-#pragma mark - Subclassing
-
-/**
- * Determines the response object is valid.
- */
-- (BOOL)validateResponseObject:(nullable id)object;
 
 @end
 

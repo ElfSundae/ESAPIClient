@@ -10,57 +10,11 @@
 
 @implementation ESJSONDictionaryResponseSerializer
 
-- (instancetype)init
+- (BOOL)validateResponseObject:(nullable id)responseObject
 {
-    self = [super init];
-    if (self) {
-        self.removesKeysWithNullValues = YES;
-    }
-    return self;
-}
-
-- (BOOL)validateResponseObject:(nullable id)object
-{
-    return ([object isKindOfClass:[NSDictionary class]] &&
-            (!self.responseCodeKey || [(NSDictionary *)object objectForKey:self.responseCodeKey]));
-}
-
-- (id)responseObjectForResponse:(NSURLResponse *)response
-                           data:(NSData *)data
-                          error:(NSError *__autoreleasing *)error
-{
-    NSError *serializerError = nil;
-    id object = [super responseObjectForResponse:response data:data error:&serializerError];
-
-    if (serializerError) {
-        if (error) {
-            *error = serializerError;
-        }
-
-        return nil;
-    }
-
-    if (![self validateResponseObject:object]) {
-        if (error) {
-            NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
-            userInfo[NSLocalizedDescriptionKey] = NSLocalizedStringFromTable(@"Invalid response object", @"ESAPIClient", nil);
-            userInfo[NSURLErrorFailingURLErrorKey] = response.URL;
-            userInfo[AFNetworkingOperationFailingURLResponseErrorKey] = response;
-            if (object) {
-                userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] = object;
-            } else if (data) {
-                userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] = data;
-            }
-
-            *error = [NSError errorWithDomain:AFURLResponseSerializationErrorDomain
-                                         code:NSURLErrorCannotDecodeContentData
-                                     userInfo:userInfo];
-        }
-
-        return nil;
-    }
-
-    return object;
+    return ([responseObject isKindOfClass:[NSDictionary class]] &&
+            (!self.responseCodeKey ||
+             [(NSDictionary *)responseObject objectForKey:self.responseCodeKey]));
 }
 
 #pragma mark - NSSecureCoding

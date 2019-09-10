@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		E74692862327AC8600126D49 /* ESJSONResponseSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESJSONResponseSerializer.h; sourceTree = "<group>"; };
+		E74692872327AC8600126D49 /* ESJSONResponseSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESJSONResponseSerializer.m; sourceTree = "<group>"; };
 		E75C926322BB685B006EF5EC /* ESAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESAPIClient.h; sourceTree = "<group>"; };
 		E75C926422BB685B006EF5EC /* ESAPIClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESAPIClient.m; sourceTree = "<group>"; };
 		E75C926C22BB6B05006EF5EC /* ESJSONDictionaryResponseSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESJSONDictionaryResponseSerializer.h; sourceTree = "<group>"; };
@@ -28,6 +30,8 @@
 				E75C926422BB685B006EF5EC /* ESAPIClient.m */,
 				E75C926C22BB6B05006EF5EC /* ESJSONDictionaryResponseSerializer.h */,
 				E75C926D22BB6B05006EF5EC /* ESJSONDictionaryResponseSerializer.m */,
+				E74692862327AC8600126D49 /* ESJSONResponseSerializer.h */,
+				E74692872327AC8600126D49 /* ESJSONResponseSerializer.m */,
 			);
 			path = ESAPIClient;
 			sourceTree = "<group>";

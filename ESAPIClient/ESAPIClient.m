@@ -35,7 +35,7 @@ static ESAPIClient *_defaultClient = nil;
     if (self) {
         self.requestSerializer.timeoutInterval = 40;
         self.responseSerializer = [ESJSONDictionaryResponseSerializer serializer];
-        
+
         self.defaultMultipartNameForFile = @"file";
         self.imageCompressionQuality = 0.9;
     }
@@ -80,7 +80,7 @@ static ESAPIClient *_defaultClient = nil;
                                         success:(nullable void (^)(NSURLSessionDownloadTask *task, NSURL *filePath))success
                                         failure:(nullable void (^)(NSURLSessionDownloadTask * _Nullable task, NSError *error))failure
 {
-    NSURLRequest *request = [NSURLRequest requestWithURL:[self fullURL:URLString]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[self URLWithPath:URLString]];
 
     __block NSURLSessionDownloadTask *task = nil;
     task = [self downloadTaskWithRequest:request progress:progress destination:^NSURL * _Nonnull (NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
