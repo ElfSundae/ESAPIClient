@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)setDefaultClient:(ESAPIClient *)client;
 
 /**
- * The default value of multipart `name` for uploading file.
+ * The multipart `name` for uploading file.
  * @discussion The default value is "file".
  */
 @property (nonatomic, copy) NSString *fileMultipartName;
