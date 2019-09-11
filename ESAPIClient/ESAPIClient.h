@@ -41,6 +41,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * Uploads a file with a multipart `POST` request.
+ * @discussion self.fileMultipartName will be used as the multipart name for the
+ * uploading file, the content type of uploading file will be automatically
+ * detected from the file extension.
  */
 - (nullable NSURLSessionDataTask *)uploadFile:(NSURL *)fileURL
                                            to:(NSString *)URLString
