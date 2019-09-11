@@ -34,7 +34,6 @@ static ESAPIClient *_defaultClient = nil;
     self = [super initWithBaseURL:url sessionConfiguration:configuration];
     if (self) {
         self.requestSerializer.timeoutInterval = 40;
-        self.responseSerializer = [ESJSONDictionaryResponseSerializer serializer];
 
         self.fileMultipartName = @"file";
         self.imageCompressionQuality = 0.9;

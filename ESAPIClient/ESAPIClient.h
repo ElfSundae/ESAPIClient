@@ -24,11 +24,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)setDefaultClient:(ESAPIClient *)client;
 
 /**
- * The serializer to validate and serialize the HTTP response.
- */
-@property (nonatomic, strong) ESJSONDictionaryResponseSerializer *responseSerializer;
-
-/**
  * The default value of multipart `name` for uploading file.
  * @discussion The default value is "file".
  */

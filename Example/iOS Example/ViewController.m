@@ -43,7 +43,7 @@
 - (void)NoCodeKey
 {
     ESAPIClient *client = ESAPIClient.defaultClient.copy;
-    client.responseSerializer.responseCodeKey = @"code";
+    ((ESJSONDictionaryResponseSerializer *)client.responseSerializer).responseCodeKey = @"code";
     [client GET:@"users/1" parameters:nil success:nil failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [self showAlert:error.localizedDescription];
     }];
@@ -54,11 +54,11 @@
     ESAPIClient *client = [[ESAPIClient alloc] init];
     client.fileMultipartName = @"uploadfile";
     client.imageCompressionQuality = 0.6;
-    client.responseSerializer.responseCodeKey = @"code";
+    ((ESJSONDictionaryResponseSerializer *)client.responseSerializer).responseCodeKey = @"code";
 
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:client];
     ESAPIClient *decoded = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-    NSLog(@"%@ %f %@", decoded.fileMultipartName, decoded.imageCompressionQuality, decoded.responseSerializer.responseCodeKey);
+    NSLog(@"%@ %f %@", decoded.fileMultipartName, decoded.imageCompressionQuality, ((ESJSONDictionaryResponseSerializer *)decoded.responseSerializer).responseCodeKey);
 }
 
 - (void)NSCopying
@@ -66,10 +66,10 @@
     ESAPIClient *client = [[ESAPIClient alloc] init];
     client.fileMultipartName = @"uploadfile";
     client.imageCompressionQuality = 0.6;
-    client.responseSerializer.responseCodeKey = @"code";
+    ((ESJSONDictionaryResponseSerializer *)client.responseSerializer).responseCodeKey = @"code";
 
     ESAPIClient *copying = [client copy];
-    NSLog(@"%@ %f %@", copying.fileMultipartName, copying.imageCompressionQuality, copying.responseSerializer.responseCodeKey);
+    NSLog(@"%@ %f %@", copying.fileMultipartName, copying.imageCompressionQuality, ((ESJSONDictionaryResponseSerializer *)copying.responseSerializer).responseCodeKey);
 }
 
 - (void)showAlert:(NSString *)title

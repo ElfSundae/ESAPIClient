@@ -39,6 +39,7 @@
     client.requestSerializer.URLQueryParametersBlock = ^NSDictionary<NSString *, id> * _Nullable (NSString * _Nonnull method, NSString * _Nonnull URLString, id _Nullable parameters) {
         return @{ @"_time": @((long)[NSDate date].timeIntervalSince1970) };
     };
+    client.responseSerializer = [ESJSONDictionaryResponseSerializer serializer];
 #if DEBUG
     client.logger.enabled = YES;
     [client.logger setLogLevel:AFLoggerLevelDebug];
