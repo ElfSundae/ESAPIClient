@@ -54,14 +54,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 #if !TARGET_OS_OSX
 /**
- * Upload an UIImage as JPEG with a multipart `POST` request.
- * @discussion Image will be compressed to data in JPEG format before uploading.
+ * Upload an UIImage as JPEG data with a multipart `POST` request.
+ * @discussion The image will be compressed to JPEG data with
+ * self.imageCompressionQuality before uploading.
  */
 - (void)uploadImage:(UIImage *)image
                  to:(NSString *)URLString
-         parameters:(nullable NSDictionary *)parameters
-           progress:(nullable void (^)(NSProgress *progress))progress
-            success:(nullable void (^)(NSURLSessionDataTask *task, NSDictionary * _Nullable response))success
+         parameters:(nullable id)parameters
+           progress:(nullable void (^)(NSProgress *uploadProgress))uploadProgress
+            success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
             failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure;
 #endif
 

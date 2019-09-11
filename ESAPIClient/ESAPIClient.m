@@ -55,9 +55,9 @@ static ESAPIClient *_defaultClient = nil;
 #if !TARGET_OS_OSX
 - (void)uploadImage:(UIImage *)image
                  to:(NSString *)URLString
-         parameters:(nullable NSDictionary *)parameters
-           progress:(nullable void (^)(NSProgress *progress))progress
-            success:(nullable void (^)(NSURLSessionDataTask *task, NSDictionary * _Nullable response))success
+         parameters:(nullable id)parameters
+           progress:(nullable void (^)(NSProgress *uploadProgress))uploadProgress
+            success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
             failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure;
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -78,7 +78,7 @@ static ESAPIClient *_defaultClient = nil;
 
         [self POST:URLString parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
             [formData appendPartWithFileData:imageData name:self.fileMultipartName fileName:@"image.jpg" mimeType:@"image/jpeg"];
-        } progress:progress success:success failure:failure];
+        } progress:uploadProgress success:success failure:failure];
     });
 }
 #endif
