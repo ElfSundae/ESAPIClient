@@ -39,6 +39,16 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic) CGFloat imageCompressionQuality;
 
+/**
+ * Uploads a file with a multipart `POST` request.
+ */
+- (nullable NSURLSessionDataTask *)uploadFile:(NSURL *)fileURL
+                                           to:(NSString *)URLString
+                                   parameters:(nullable id)parameters
+                                     progress:(nullable void (^)(NSProgress *uploadProgress))uploadProgress
+                                      success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
+                                      failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure;
+
 #if !TARGET_OS_OSX
 /**
  * Upload an UIImage as JPEG with a multipart `POST` request.
