@@ -15,11 +15,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * The default API client instance.
+ * @discussion The -defaultClient is KVO-compatible.
  */
 + (instancetype)defaultClient;
 
 /**
  * Set the default API client instance.
+ * @discussion The -defaultClient is KVO-compatible.
  */
 + (void)setDefaultClient:(ESAPIClient *)client;
 
