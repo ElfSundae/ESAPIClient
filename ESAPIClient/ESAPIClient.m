@@ -40,12 +40,12 @@ static ESAPIClient *_defaultClient = nil;
     return self;
 }
 
-- (NSURLSessionDataTask *)uploadFile:(NSURL *)fileURL
-                                  to:(NSString *)URLString
-                          parameters:(nullable id)parameters
-                            progress:(nullable void (^)(NSProgress *uploadProgress))uploadProgress
-                             success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
-                             failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure
+- (nullable NSURLSessionDataTask *)uploadFile:(NSURL *)fileURL
+                                           to:(NSString *)URLString
+                                   parameters:(nullable id)parameters
+                                     progress:(nullable void (^)(NSProgress *uploadProgress))uploadProgress
+                                      success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
+                                      failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure
 {
     return [self POST:URLString parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         [formData appendPartWithFileURL:fileURL name:self.fileMultipartName error:NULL];
@@ -58,7 +58,7 @@ static ESAPIClient *_defaultClient = nil;
          parameters:(nullable id)parameters
            progress:(nullable void (^)(NSProgress *uploadProgress))uploadProgress
             success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
-            failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure;
+            failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSData *imageData = UIImageJPEGRepresentation(image, self.imageCompressionQuality);
@@ -114,28 +114,28 @@ static ESAPIClient *_defaultClient = nil;
 
 #pragma mark - Subclass
 
-- (NSURLSessionDataTask *)GET:(NSString *)URLString
-                   parameters:(id)parameters
-                      success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
-                      failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure
+- (nullable NSURLSessionDataTask *)GET:(NSString *)URLString
+                            parameters:(nullable id)parameters
+                               success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
+                               failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure
 {
 
     return [self GET:URLString parameters:parameters progress:nil success:success failure:failure];
 }
 
-- (NSURLSessionDataTask *)POST:(NSString *)URLString
-                    parameters:(id)parameters
-                       success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
-                       failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure
+- (nullable NSURLSessionDataTask *)POST:(NSString *)URLString
+                             parameters:(nullable id)parameters
+                                success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
+                                failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure
 {
     return [self POST:URLString parameters:parameters progress:nil success:success failure:failure];
 }
 
-- (NSURLSessionDataTask *)POST:(NSString *)URLString
-                    parameters:(nullable id)parameters
-     constructingBodyWithBlock:(nullable void (^)(id<AFMultipartFormData> _Nonnull))block
-                       success:(nullable void (^)(NSURLSessionDataTask * _Nonnull, id _Nullable))success
-                       failure:(nullable void (^)(NSURLSessionDataTask * _Nullable, NSError * _Nonnull))failure
+- (nullable NSURLSessionDataTask *)POST:(NSString *)URLString
+                             parameters:(nullable id)parameters
+              constructingBodyWithBlock:(nullable void (^)(id <AFMultipartFormData> formData))block
+                                success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
+                                failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure
 {
     return [self POST:URLString parameters:parameters constructingBodyWithBlock:block progress:nil success:success failure:failure];
 }
