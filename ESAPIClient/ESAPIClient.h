@@ -48,7 +48,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (nullable NSURLSessionDataTask *)uploadFile:(NSURL *)fileURL
                                            to:(NSString *)URLString
                                    parameters:(nullable id)parameters
-                                     progress:(nullable void (^)(NSProgress *uploadProgress))uploadProgress
+                                     progress:(nullable void (^)(NSProgress *progress))progress
                                       success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
                                       failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure;
 
@@ -61,7 +61,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)uploadImage:(UIImage *)image
                  to:(NSString *)URLString
          parameters:(nullable id)parameters
-           progress:(nullable void (^)(NSProgress *uploadProgress))uploadProgress
+           progress:(nullable void (^)(NSProgress *progress))progress
             success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
             failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure;
 #endif

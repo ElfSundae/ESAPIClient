@@ -43,20 +43,20 @@ static ESAPIClient *_defaultClient = nil;
 - (nullable NSURLSessionDataTask *)uploadFile:(NSURL *)fileURL
                                            to:(NSString *)URLString
                                    parameters:(nullable id)parameters
-                                     progress:(nullable void (^)(NSProgress *uploadProgress))uploadProgress
+                                     progress:(nullable void (^)(NSProgress *progress))progress
                                       success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
                                       failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure
 {
     return [self POST:URLString parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         [formData appendPartWithFileURL:fileURL name:self.fileMultipartName error:NULL];
-    } progress:uploadProgress success:success failure:failure];
+    } progress:progress success:success failure:failure];
 }
 
 #if !TARGET_OS_OSX
 - (void)uploadImage:(UIImage *)image
                  to:(NSString *)URLString
          parameters:(nullable id)parameters
-           progress:(nullable void (^)(NSProgress *uploadProgress))uploadProgress
+           progress:(nullable void (^)(NSProgress *progress))progress
             success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
             failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure
 {
@@ -78,7 +78,7 @@ static ESAPIClient *_defaultClient = nil;
 
         [self POST:URLString parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
             [formData appendPartWithFileData:imageData name:self.fileMultipartName fileName:@"image.jpg" mimeType:@"image/jpeg"];
-        } progress:uploadProgress success:success failure:failure];
+        } progress:progress success:success failure:failure];
     });
 }
 #endif
