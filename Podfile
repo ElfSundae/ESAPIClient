@@ -5,6 +5,7 @@ project 'Example/Example.xcodeproj'
 
 abstract_target 'Example' do
     pod 'ESAPIClient', :path => '.'
+    pod 'AFNetworkingExtension'
 
     target 'iOS Example' do
         platform :ios, '9.0'

@@ -6,8 +6,9 @@
 //  Copyright © 2019 https://0x123.com. All rights reserved.
 //
 
-#import <AFNetworkingExtension/AFNetworkingExtension.h>
 #import "ESJSONDictionaryResponseSerializer.h"
+
+#import <AFNetworking/AFHTTPSessionManager.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

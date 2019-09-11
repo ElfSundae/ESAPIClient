@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/ElfSundae/ESAPIClient.svg)](https://travis-ci.org/ElfSundae/ESAPIClient)
 
-ESAPIClient is an API client library built on top of [AFNetworking](https://github.com/AFNetworking/AFNetworking) and [AFNetworkingExtension](https://github.com/ElfSundae/AFNetworkingExtension).
+ESAPIClient is an API client library built on top of [AFNetworking](https://github.com/AFNetworking/AFNetworking).
 
 ## Requirements
 

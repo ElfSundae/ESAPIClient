@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import <ESAPIClient/ESAPIClient.h>
+#import <AFNetworkingExtension/AFNetworkingExtension.h>
 
 @interface AppDelegate ()
 

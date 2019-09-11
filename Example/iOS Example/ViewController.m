@@ -54,6 +54,7 @@
     ESAPIClient *client = [[ESAPIClient alloc] init];
     client.fileMultipartName = @"uploadfile";
     client.imageCompressionQuality = 0.6;
+    client.responseSerializer = [ESJSONDictionaryResponseSerializer serializer];
     ((ESJSONDictionaryResponseSerializer *)client.responseSerializer).responseCodeKey = @"code";
 
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:client];
@@ -66,6 +67,7 @@
     ESAPIClient *client = [[ESAPIClient alloc] init];
     client.fileMultipartName = @"uploadfile";
     client.imageCompressionQuality = 0.6;
+    client.responseSerializer = [ESJSONDictionaryResponseSerializer serializer];
     ((ESJSONDictionaryResponseSerializer *)client.responseSerializer).responseCodeKey = @"code";
 
     ESAPIClient *copying = [client copy];
