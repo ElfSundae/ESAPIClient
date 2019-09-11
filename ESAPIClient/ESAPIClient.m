@@ -102,62 +102,28 @@ static ESAPIClient *_defaultClient = nil;
 
 #pragma mark - Subclass
 
-// Since we changed the method signature, i.e. changed `id` to `NSDictionary` for
-// `parameters` and `responseObject`, Xcode will warning "Method definition not found",
-// so just implement these methods in our .m file.
-
-- (nullable NSURLSessionDataTask *)GET:(NSString *)URLString
-                            parameters:(nullable NSDictionary *)parameters
-                              progress:(nullable void (^)(NSProgress *progress))progress
-                               success:(nullable void (^)(NSURLSessionDataTask *task, NSDictionary * _Nullable response))success
-                               failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure;
+- (NSURLSessionDataTask *)GET:(NSString *)URLString
+                   parameters:(id)parameters
+                      success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
+                      failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure
 {
-    return [super GET:URLString parameters:parameters progress:progress success:success failure:failure];
-}
 
-- (nullable NSURLSessionDataTask *)POST:(NSString *)URLString
-                             parameters:(nullable NSDictionary *)parameters
-                               progress:(nullable void (^)(NSProgress *progress))progress
-                                success:(nullable void (^)(NSURLSessionDataTask *task, NSDictionary * _Nullable response))success
-                                failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure;
-{
-    return [super POST:URLString parameters:parameters progress:progress success:success failure:failure];
-}
-
-- (nullable NSURLSessionDataTask *)POST:(NSString *)URLString
-                             parameters:(nullable NSDictionary *)parameters
-              constructingBodyWithBlock:(nullable void (^)(id <AFMultipartFormData> formData))block
-                               progress:(nullable void (^)(NSProgress *progress))progress
-                                success:(nullable void (^)(NSURLSessionDataTask *task, NSDictionary * _Nullable response))success
-                                failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure;
-{
-    return [super POST:URLString parameters:parameters constructingBodyWithBlock:block progress:progress success:success failure:failure];
-}
-
-// These three methods below have been marked as deprecated in the AFNetworking,
-// we put them in our .h file to eliminate build warnings.
-
-- (nullable NSURLSessionDataTask *)GET:(NSString *)URLString
-                            parameters:(nullable NSDictionary *)parameters
-                               success:(nullable void (^)(NSURLSessionDataTask *task, NSDictionary * _Nullable response))success
-                               failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure
-{
     return [self GET:URLString parameters:parameters progress:nil success:success failure:failure];
 }
 
-- (nullable NSURLSessionDataTask *)POST:(NSString *)URLString
-                             parameters:(nullable NSDictionary *)parameters
-                                success:(nullable void (^)(NSURLSessionDataTask *task, NSDictionary * _Nullable response))success
-                                failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure
+- (NSURLSessionDataTask *)POST:(NSString *)URLString
+                    parameters:(id)parameters
+                       success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
+                       failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure
 {
     return [self POST:URLString parameters:parameters progress:nil success:success failure:failure];
 }
 
-- (nullable NSURLSessionDataTask *)POST:(NSString *)URLString
-                             parameters:(nullable NSDictionary *)parameters
-              constructingBodyWithBlock:(nullable void (^)(id <AFMultipartFormData> formData))block
-                                success:(nullable void (^)(NSURLSessionDataTask *task, NSDictionary * _Nullable response))success
-                                failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure
+- (NSURLSessionDataTask *)POST:(NSString *)URLString
+                    parameters:(nullable id)parameters
+     constructingBodyWithBlock:(nullable void (^)(id<AFMultipartFormData> _Nonnull))block
+                       success:(nullable void (^)(NSURLSessionDataTask * _Nonnull, id _Nullable))success
+                       failure:(nullable void (^)(NSURLSessionDataTask * _Nullable, NSError * _Nonnull))failure
 {
     return [self POST:URLString parameters:parameters constructingBodyWithBlock:block progress:nil success:success failure:failure];
 }
