@@ -40,12 +40,12 @@ static ESAPIClient *_defaultClient = nil;
     return self;
 }
 
-- (nullable NSURLSessionDataTask *)uploadFile:(NSURL *)fileURL
-                                           to:(NSString *)URLString
-                                   parameters:(nullable id)parameters
-                                     progress:(nullable void (^)(NSProgress *uploadProgress))uploadProgress
-                                      success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
-                                      failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure
+- (NSURLSessionDataTask *)uploadFile:(NSURL *)fileURL
+                                  to:(NSString *)URLString
+                          parameters:(nullable id)parameters
+                            progress:(nullable void (^)(NSProgress *uploadProgress))uploadProgress
+                             success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
+                             failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure
 {
     return [self POST:URLString parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         [formData appendPartWithFileURL:fileURL name:self.fileMultipartName error:NULL];
