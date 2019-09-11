@@ -63,7 +63,7 @@ NS_ASSUME_NONNULL_BEGIN
                                         failure:(nullable void (^)(NSURLSessionDownloadTask * _Nullable task, NSError *error))failure;
 
 // These three methods below have been marked as deprecated in AFNetworking,
-// we override them here and remove DEPRECATED_ATTRIBUTE to eliminate
+// we override them here and remove DEPRECATED_ATTRIBUTE to silence the
 // deprecated-warning.
 
 /**
