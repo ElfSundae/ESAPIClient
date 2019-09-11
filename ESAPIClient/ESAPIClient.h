@@ -67,11 +67,21 @@ NS_ASSUME_NONNULL_BEGIN
 #endif
 
 /**
- * Creates and runs an `NSURLSessionDownloadTask` with the specified URL.
+ * Downloads a file with a "GET" request.
+ */
+- (nullable NSURLSessionDownloadTask *)download:(NSString *)URLString
+                                         toFile:(NSURL *)fileURL
+                                     parameters:(nullable id)parameters
+                                       progress:(nullable void (^)(NSProgress *progress))progress
+                                        success:(nullable void (^)(NSURLSessionDownloadTask *task, NSURL *filePath))success
+                                        failure:(nullable void (^)(NSURLSessionDownloadTask * _Nullable task, NSError *error))failure;
+
+/**
+ * Downloads a file with a "GET" request.
  */
 - (nullable NSURLSessionDownloadTask *)download:(NSString *)URLString
                                     toDirectory:(NSURL *)directoryURL
-                                       filename:(nullable NSString *)filename
+                                     parameters:(nullable id)parameters
                                        progress:(nullable void (^)(NSProgress *progress))progress
                                         success:(nullable void (^)(NSURLSessionDownloadTask *task, NSURL *filePath))success
                                         failure:(nullable void (^)(NSURLSessionDownloadTask * _Nullable task, NSError *error))failure;

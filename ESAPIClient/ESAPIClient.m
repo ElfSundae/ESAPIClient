@@ -84,18 +84,49 @@ static ESAPIClient *_defaultClient = nil;
 #endif
 
 - (nullable NSURLSessionDownloadTask *)download:(NSString *)URLString
-                                    toDirectory:(NSURL *)directoryURL
-                                       filename:(nullable NSString *)filename
+                                         toFile:(NSURL *)fileURL
+                                     parameters:(nullable id)parameters
                                        progress:(nullable void (^)(NSProgress *progress))progress
                                         success:(nullable void (^)(NSURLSessionDownloadTask *task, NSURL *filePath))success
                                         failure:(nullable void (^)(NSURLSessionDownloadTask * _Nullable task, NSError *error))failure
 {
-    NSURLRequest *request = [NSURLRequest requestWithURL:[self URLWithPath:URLString]];
+    return [self download:URLString parameters:parameters destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
+        return fileURL;
+    } progress:progress success:success failure:failure];
+}
 
-    __block NSURLSessionDownloadTask *task = nil;
-    task = [self downloadTaskWithRequest:request progress:progress destination:^NSURL * _Nonnull (NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
-        return [directoryURL URLByAppendingPathComponent:filename ?: response.suggestedFilename isDirectory:NO];
-    } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
+- (nullable NSURLSessionDownloadTask *)download:(NSString *)URLString
+                                    toDirectory:(NSURL *)directoryURL
+                                     parameters:(nullable id)parameters
+                                       progress:(nullable void (^)(NSProgress *progress))progress
+                                        success:(nullable void (^)(NSURLSessionDownloadTask *task, NSURL *filePath))success
+                                        failure:(nullable void (^)(NSURLSessionDownloadTask * _Nullable task, NSError *error))failure
+{
+    return [self download:URLString parameters:parameters destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
+        return [directoryURL URLByAppendingPathComponent:response.suggestedFilename isDirectory:NO];
+    } progress:progress success:success failure:failure];
+}
+
+- (nullable NSURLSessionDownloadTask *)download:(NSString *)URLString
+                                     parameters:(nullable id)parameters
+                                    destination:(nullable NSURL * (^)(NSURL *targetPath, NSURLResponse *response))destination
+                                       progress:(nullable void (^)(NSProgress *progress))progress
+                                        success:(nullable void (^)(NSURLSessionDownloadTask *task, NSURL *filePath))success
+                                        failure:(nullable void (^)(NSURLSessionDownloadTask * _Nullable task, NSError *error))failure
+{
+    NSError *serializationError = nil;
+    NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters error:&serializationError];
+    if (serializationError) {
+        if (failure) {
+            dispatch_async(self.completionQueue ?: dispatch_get_main_queue(), ^{
+                failure(nil, serializationError);
+            });
+        }
+
+        return nil;
+    }
+
+    __block NSURLSessionDownloadTask *task = [self downloadTaskWithRequest:request progress:progress destination:destination completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
         if (error) {
             if (failure) {
                 failure(task, error);
