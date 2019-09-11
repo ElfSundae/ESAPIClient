@@ -11,7 +11,6 @@
 static ESAPIClient *_defaultClient = nil;
 
 @implementation ESAPIClient
-@dynamic responseSerializer;
 
 + (instancetype)defaultClient
 {
