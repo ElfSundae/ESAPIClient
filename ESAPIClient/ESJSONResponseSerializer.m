@@ -40,7 +40,7 @@
         return nil;
     }
 
-    if (![self validateResponseObject:responseObject]) {
+    if (responseObject && ![self validateResponseObject:responseObject]) {
         if (error) {
             NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
             userInfo[NSLocalizedDescriptionKey] = NSLocalizedStringFromTable(@"Request failed: invalid response object", @"ESAPIClient", nil);
