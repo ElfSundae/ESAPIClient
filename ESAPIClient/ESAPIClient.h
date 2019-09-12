@@ -74,7 +74,7 @@ NS_ASSUME_NONNULL_BEGIN
                                          toFile:(NSURL *)fileURL
                                      parameters:(nullable id)parameters
                                        progress:(nullable void (^)(NSProgress *progress))progress
-                                        success:(nullable void (^)(NSURLSessionDownloadTask *task, NSURL *filePath))success
+                                        success:(nullable void (^)(NSURLSessionDownloadTask *task, NSURL *destFileURL))success
                                         failure:(nullable void (^)(NSURLSessionDownloadTask * _Nullable task, NSError *error))failure;
 
 /**
@@ -84,7 +84,7 @@ NS_ASSUME_NONNULL_BEGIN
                                     toDirectory:(NSURL *)directoryURL
                                      parameters:(nullable id)parameters
                                        progress:(nullable void (^)(NSProgress *progress))progress
-                                        success:(nullable void (^)(NSURLSessionDownloadTask *task, NSURL *filePath))success
+                                        success:(nullable void (^)(NSURLSessionDownloadTask *task, NSURL *destFileURL))success
                                         failure:(nullable void (^)(NSURLSessionDownloadTask * _Nullable task, NSError *error))failure;
 
 // These three methods below have been marked as deprecated in AFNetworking,

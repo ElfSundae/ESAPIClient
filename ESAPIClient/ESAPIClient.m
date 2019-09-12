@@ -87,7 +87,7 @@ static ESAPIClient *_defaultClient = nil;
                                          toFile:(NSURL *)fileURL
                                      parameters:(nullable id)parameters
                                        progress:(nullable void (^)(NSProgress *progress))progress
-                                        success:(nullable void (^)(NSURLSessionDownloadTask *task, NSURL *filePath))success
+                                        success:(nullable void (^)(NSURLSessionDownloadTask *task, NSURL *destFileURL))success
                                         failure:(nullable void (^)(NSURLSessionDownloadTask * _Nullable task, NSError *error))failure
 {
     return [self download:URLString parameters:parameters destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
@@ -99,7 +99,7 @@ static ESAPIClient *_defaultClient = nil;
                                     toDirectory:(NSURL *)directoryURL
                                      parameters:(nullable id)parameters
                                        progress:(nullable void (^)(NSProgress *progress))progress
-                                        success:(nullable void (^)(NSURLSessionDownloadTask *task, NSURL *filePath))success
+                                        success:(nullable void (^)(NSURLSessionDownloadTask *task, NSURL *destFileURL))success
                                         failure:(nullable void (^)(NSURLSessionDownloadTask * _Nullable task, NSError *error))failure
 {
     return [self download:URLString parameters:parameters destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
@@ -111,7 +111,7 @@ static ESAPIClient *_defaultClient = nil;
                                      parameters:(nullable id)parameters
                                     destination:(nullable NSURL * (^)(NSURL *targetPath, NSURLResponse *response))destination
                                        progress:(nullable void (^)(NSProgress *progress))progress
-                                        success:(nullable void (^)(NSURLSessionDownloadTask *task, NSURL *filePath))success
+                                        success:(nullable void (^)(NSURLSessionDownloadTask *task, NSURL *destFileURL))success
                                         failure:(nullable void (^)(NSURLSessionDownloadTask * _Nullable task, NSError *error))failure
 {
     NSError *serializationError = nil;
