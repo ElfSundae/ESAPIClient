@@ -22,10 +22,12 @@ static ESAPIClient *_defaultClient = nil;
 
 + (void)setDefaultClient:(ESAPIClient *)client
 {
-    NSString *key = NSStringFromSelector(@selector(defaultClient));
-    [self willChangeValueForKey:key];
-    _defaultClient = client;
-    [self didChangeValueForKey:key];
+    if (_defaultClient != client) {
+        NSString *key = NSStringFromSelector(@selector(defaultClient));
+        [self willChangeValueForKey:key];
+        _defaultClient = client;
+        [self didChangeValueForKey:key];
+    }
 }
 
 - (instancetype)initWithBaseURL:(NSURL *)url sessionConfiguration:(NSURLSessionConfiguration *)configuration
