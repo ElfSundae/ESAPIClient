@@ -10,7 +10,7 @@
 
 @implementation ESJSONDictionaryResponseSerializer
 
-- (BOOL)validateResponseObject:(nullable id)responseObject
+- (BOOL)validateResponseObject:(id)responseObject
 {
     return ([responseObject isKindOfClass:[NSDictionary class]] &&
             (!self.responseCodeKey ||

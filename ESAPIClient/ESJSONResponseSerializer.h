@@ -10,17 +10,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/**
- * A subclass of `AFJSONResponseSerializer` that removes keys with `NSNull`
- * values from the response JSON by default, supports validating the decoded
- * response object.
- */
 @interface ESJSONResponseSerializer : AFJSONResponseSerializer
+
+/**
+ * Whether to remove keys with `NSNull` values from response JSON.
+ * @discussion Defaults to \c YES .
+ */
+@property (nonatomic, assign) BOOL removesKeysWithNullValues;
 
 /**
  * Validates the decoded response object.
  */
-- (BOOL)validateResponseObject:(nullable id)responseObject;
+- (BOOL)validateResponseObject:(id)responseObject;
 
 @end
 

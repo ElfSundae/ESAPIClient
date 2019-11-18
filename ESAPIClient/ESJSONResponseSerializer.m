@@ -9,6 +9,7 @@
 #import "ESJSONResponseSerializer.h"
 
 @implementation ESJSONResponseSerializer
+@dynamic removesKeysWithNullValues;
 
 - (instancetype)init
 {
