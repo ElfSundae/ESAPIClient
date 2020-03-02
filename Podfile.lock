@@ -1,6 +1,4 @@
 PODS:
-  - AFNetworkActivityLogger (3.0.0):
-    - AFNetworking/NSURLSession (~> 3.0)
   - AFNetworking/NSURLSession (3.2.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
@@ -8,27 +6,12 @@ PODS:
   - AFNetworking/Reachability (3.2.1)
   - AFNetworking/Security (3.2.1)
   - AFNetworking/Serialization (3.2.1)
-  - AFNetworkingExtension (1.4.0):
-    - AFNetworkingExtension/Logger (= 1.4.0)
-    - AFNetworkingExtension/NSURLSession (= 1.4.0)
-    - AFNetworkingExtension/Reachability (= 1.4.0)
-    - AFNetworkingExtension/Serialization (= 1.4.0)
-  - AFNetworkingExtension/Logger (1.4.0):
-    - AFNetworkActivityLogger (~> 3.0)
-    - AFNetworking/NSURLSession (~> 3.0)
-    - ESFramework/Core (~> 3.18)
-  - AFNetworkingExtension/NSURLSession (1.4.0):
-    - AFNetworking/NSURLSession (~> 3.0)
-  - AFNetworkingExtension/Reachability (1.4.0):
+  - AFNetworkingExtension (0.0.1):
+    - AFNetworkingExtension/Reachability (= 0.0.1)
+  - AFNetworkingExtension/Reachability (0.0.1):
     - AFNetworking/Reachability (>= 2.0)
-  - AFNetworkingExtension/Serialization (1.4.0):
-    - AFNetworking/Serialization (~> 3.0)
-    - ESFramework/Foundation (~> 3.18)
   - ESAPIClient (1.5.2):
     - AFNetworking/NSURLSession (~> 3.0)
-  - ESFramework/Core (3.18.12)
-  - ESFramework/Foundation (3.18.12):
-    - ESFramework/Core
 
 DEPENDENCIES:
   - AFNetworkingExtension
@@ -36,22 +19,18 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - AFNetworkActivityLogger
     - AFNetworking
     - AFNetworkingExtension
-    - ESFramework
 
 EXTERNAL SOURCES:
   ESAPIClient:
     :path: "."
 
 SPEC CHECKSUMS:
-  AFNetworkActivityLogger: e77f68d014becb33c4306a23f56a64906ff72670
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  AFNetworkingExtension: 8c8fba56b0aa28bcaebc9fbc099564f2027a1c3c
-  ESAPIClient: 0f315bf05b67fe490bea4137d7a812ab5edb1951
-  ESFramework: 7f06933cb9f9067cdfee244033ba7fae81ba6815
+  AFNetworkingExtension: 30eec2e7b2faf626de2a791636f6be9f5fa831e2
+  ESAPIClient: c44b2e901580309a4c6befccacac0ea99726fdd2
 
-PODFILE CHECKSUM: 2942b4c7ce387deeefb26900fca8720acddd3047
+PODFILE CHECKSUM: c12b572b5c9c25a71ff1293ba32ad5d3965b8685
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.0
