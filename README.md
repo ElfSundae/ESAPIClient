@@ -1,17 +1,30 @@
 # ESAPIClient
 
-[![Build Status](https://travis-ci.org/ElfSundae/ESAPIClient.svg)](https://travis-ci.org/ElfSundae/ESAPIClient)
+[![Build status](https://github.com/ElfSundae/ESAPIClient/workflows/Build/badge.svg)](https://github.com/ElfSundae/ESAPIClient/actions?query=workflow%3ABuild)
+![CocoaPods](https://img.shields.io/cocoapods/v/ESAPIClient)
+![CocoaPods platforms](https://img.shields.io/cocoapods/p/ESAPIClient)
 
 ESAPIClient is an API client library built on top of [AFNetworking](https://github.com/AFNetworking/AFNetworking).
 
 ## Requirements
 
-- Minimum deployment target: iOS 9.0, macOS 10.11, watchOS 2.0, tvOS 9.0
+- Minimum deployment target: iOS 9.0, macOS 10.10, watchOS 2.0, tvOS 9.0
 
 ## Installation
 
 ```ruby
 pod 'ESAPIClient'
+```
+
+If you are using AFNetworking 3.x, you need to add my spec-repo source URL before the Trunk source in your `Podfile`:
+
+```ruby
+source 'https://github.com/ElfSundae/CocoaPods-Specs.git'
+source 'https://cdn.cocoapods.org/'
+
+target 'Example' do
+    pod 'ESAPIClient'
+end
 ```
 
 ## Usage

@@ -24,7 +24,7 @@ PODS:
   - AFNetworking/Reachability (4.0.0.1)
   - AFNetworking/Security (4.0.0.1)
   - AFNetworking/Serialization (4.0.0.1)
-  - ESAPIClient (1.5.3):
+  - ESAPIClient (1.6.0):
     - AFNetworking/NSURLSession (>= 3.2.2)
   - ESFramework (3.22.0):
     - ESFramework/Foundation (= 3.22.0)
@@ -56,7 +56,7 @@ SPEC CHECKSUMS:
   AFNetworkActivityLogger: 9e239d3eaf9fcb71dfac5635c49458453f6e1ec7
   AFNetworkExtension: 220ed37f62324b0bef6163c858493ca9a3b659dd
   AFNetworking: f8b5270727ce91c612946f284847b0f3bcf1975c
-  ESAPIClient: da6fa688e1ecf2d7b8ed1217c4976865669572e4
+  ESAPIClient: ccd296651c493e9ebcd0e3607c9c251f2bfbe5f1
   ESFramework: af5dfb07453406a2d5b6a6a8e2ffbaf939fa69ba
 
 PODFILE CHECKSUM: 211221e788367cf54978ef4d060745299918a42c
