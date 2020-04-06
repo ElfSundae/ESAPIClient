@@ -1,0 +1,43 @@
+name: ESAPIClient
+
+options:
+  bundleIdPrefix: com.0x123.ESAPIClient
+  createIntermediateGroups: true
+  usesTabs: false
+  indentWidth: 4
+  tabWidth: 4
+  deploymentTarget:
+    iOS: '9.0'
+    tvOS: '9.0'
+    macOS: '10.10'
+    watchOS: '2.0'
+
+attributes:
+  CLASSPREFIX: ES
+  ORGANIZATIONNAME: 'https://0x123.com'
+
+settings:
+  MARKETING_VERSION: 1.5.3
+  CURRENT_PROJECT_VERSION: 1
+  # Fix warning for Xcode 11.3: Enable "Missing Localizability"
+  CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED: YES
+
+targetTemplates:
+  Example:
+    type: application
+    scheme: {} # To generate default shared schemes: https://github.com/yonaskolb/XcodeGen/issues/215
+    sources: ["Examples/${target_name}"]
+    settings:
+      DEVELOPMENT_TEAM: B86YZY7YJX
+
+targets:
+  ESAPIClient:
+    type: library.static
+    platform: iOS
+    sources: [ESAPIClient]
+    settings:
+      PRODUCT_NAME: ESAPIClient-iOS # Fix warning: Multiple targets match implicit dependency for linker flag '-lESAPIClient'.
+
+  iOS Example:
+    platform: iOS
+    templates: [Example]

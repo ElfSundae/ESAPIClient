@@ -1,25 +1,9 @@
-# use_frameworks!
+source 'https://github.com/ElfSundae/CocoaPods-Specs.git'
+source 'https://cdn.cocoapods.org/'
 
-workspace 'ESAPIClient.xcworkspace'
-project 'Example/Example.xcodeproj'
+platform :ios, '9.0'
 
-abstract_target 'Example' do
+target 'iOS Example' do
     pod 'ESAPIClient', :path => '.'
-    pod 'AFNetworkingExtension'
-
-    target 'iOS Example' do
-        platform :ios, '8.0'
-    end
-
-    target 'macOS Example' do
-        platform :osx, '10.11'
-    end
-
-    target 'tvOS Example' do
-        platform :tvos, '9.0'
-    end
-
-    target 'watchOS Example' do
-        platform :watchos, '2.0'
-    end
+    pod 'AFNetworkExtension'
 end

@@ -152,8 +152,24 @@ static ESAPIClient *_defaultClient = nil;
                                success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
                                failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure
 {
+    return [self GET:URLString parameters:parameters headers:nil progress:nil success:success failure:failure];
+}
 
-    return [self GET:URLString parameters:parameters progress:nil success:success failure:failure];
+- (nullable NSURLSessionDataTask *)GET:(NSString *)URLString
+                            parameters:(nullable id)parameters
+                              progress:(nullable void (^)(NSProgress *downloadProgress))downloadProgress
+                               success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
+                               failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure
+{
+    return [self GET:URLString parameters:parameters headers:nil progress:downloadProgress success:success failure:failure];
+}
+
+- (nullable NSURLSessionDataTask *)HEAD:(NSString *)URLString
+                             parameters:(nullable id)parameters
+                                success:(nullable void (^)(NSURLSessionDataTask *task))success
+                                failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure
+{
+    return [self HEAD:URLString parameters:parameters headers:nil success:success failure:failure];
 }
 
 - (nullable NSURLSessionDataTask *)POST:(NSString *)URLString
@@ -161,7 +177,16 @@ static ESAPIClient *_defaultClient = nil;
                                 success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
                                 failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure
 {
-    return [self POST:URLString parameters:parameters progress:nil success:success failure:failure];
+    return [self POST:URLString parameters:parameters headers:nil progress:nil success:success failure:failure];
+}
+
+- (nullable NSURLSessionDataTask *)POST:(NSString *)URLString
+                             parameters:(nullable id)parameters
+                               progress:(nullable void (^)(NSProgress *uploadProgress))uploadProgress
+                                success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
+                                failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure
+{
+    return [self POST:URLString parameters:parameters headers:nil progress:uploadProgress success:success failure:failure];
 }
 
 - (nullable NSURLSessionDataTask *)POST:(NSString *)URLString
@@ -170,7 +195,41 @@ static ESAPIClient *_defaultClient = nil;
                                 success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
                                 failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure
 {
-    return [self POST:URLString parameters:parameters constructingBodyWithBlock:block progress:nil success:success failure:failure];
+    return [self POST:URLString parameters:parameters headers:nil constructingBodyWithBlock:block progress:nil success:success failure:failure];
+}
+
+- (nullable NSURLSessionDataTask *)POST:(NSString *)URLString
+                             parameters:(nullable id)parameters
+              constructingBodyWithBlock:(nullable void (^)(id <AFMultipartFormData> formData))block
+                               progress:(nullable void (^)(NSProgress *uploadProgress))uploadProgress
+                                success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
+                                failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure
+{
+    return [self POST:URLString parameters:parameters headers:nil constructingBodyWithBlock:block progress:uploadProgress success:success failure:failure];
+}
+
+- (nullable NSURLSessionDataTask *)PUT:(NSString *)URLString
+                            parameters:(nullable id)parameters
+                               success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
+                               failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure
+{
+    return [self PUT:URLString parameters:parameters headers:nil success:success failure:failure];
+}
+
+- (nullable NSURLSessionDataTask *)PATCH:(NSString *)URLString
+                              parameters:(nullable id)parameters
+                                 success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
+                                 failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure
+{
+    return [self PATCH:URLString parameters:parameters headers:nil success:success failure:failure];
+}
+
+- (nullable NSURLSessionDataTask *)DELETE:(NSString *)URLString
+                               parameters:(nullable id)parameters
+                                  success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
+                                  failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure
+{
+    return [self DELETE:URLString parameters:parameters headers:nil success:success failure:failure];
 }
 
 #pragma mark - NSSecureCoding

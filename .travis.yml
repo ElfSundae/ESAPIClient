@@ -1,9 +1,0 @@
-language: objective-c
-osx_image: xcode11
-
-cache: cocoapods
-
-podfile: Podfile
-
-script:
-  - pod lib lint

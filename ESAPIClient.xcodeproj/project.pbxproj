@@ -3,76 +3,311 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		179DA922040EEA5E7D7DDD3D /* libPods-iOS Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF7C3D51B58E863FD312E16 /* libPods-iOS Example.a */; };
+		213FBDF26782F0AC03AFD452 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 529589BDB756C2B7DA28ABD4 /* AppDelegate.m */; };
+		225D7A286D5C91BCFDF615A9 /* ESAPIClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 097A40E159499E810A8074C9 /* ESAPIClient.h */; };
+		27C2CFCFD28CDDDB813E8721 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E5DFF6DFF1567C0526EC31 /* ViewController.m */; };
+		37F29F3FEFA5EE2D11982866 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55ACB30FFBF56DEE3393C93B /* Assets.xcassets */; };
+		3E7A715DF69BBB08D7D9FFD5 /* ESJSONResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D35214F61003CE2B034DAA1 /* ESJSONResponseSerializer.m */; };
+		3E92253F3582B208110E651D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18330FDA89939D2BDD31913C /* LaunchScreen.storyboard */; };
+		3ED10CABCAAC9DF269DAA57E /* ESAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF31B9C0665A4A93C6F9A96 /* ESAPIClient.m */; };
+		7269133C183734CBF6F02644 /* ESJSONDictionaryResponseSerializer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1D231D70AD94F6365CE7AFEE /* ESJSONDictionaryResponseSerializer.h */; };
+		8F24A5F0D04A2BE2FF91A4D9 /* ESJSONDictionaryResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EB5B04527854365D1385EE /* ESJSONDictionaryResponseSerializer.m */; };
+		DDFE858BF46A3A4A419BC875 /* ESJSONResponseSerializer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2433A5C570E3B494B27DB848 /* ESJSONResponseSerializer.h */; };
+		F4928D3919459892212AAD06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 213049BE530AFE4FCFF49D9D /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3F0BBD2399A28E7DF7BBBFA5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				225D7A286D5C91BCFDF615A9 /* ESAPIClient.h in CopyFiles */,
+				7269133C183734CBF6F02644 /* ESJSONDictionaryResponseSerializer.h in CopyFiles */,
+				DDFE858BF46A3A4A419BC875 /* ESJSONResponseSerializer.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		E74692862327AC8600126D49 /* ESJSONResponseSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESJSONResponseSerializer.h; sourceTree = "<group>"; };
-		E74692872327AC8600126D49 /* ESJSONResponseSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESJSONResponseSerializer.m; sourceTree = "<group>"; };
-		E75C926322BB685B006EF5EC /* ESAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESAPIClient.h; sourceTree = "<group>"; };
-		E75C926422BB685B006EF5EC /* ESAPIClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESAPIClient.m; sourceTree = "<group>"; };
-		E75C926C22BB6B05006EF5EC /* ESJSONDictionaryResponseSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESJSONDictionaryResponseSerializer.h; sourceTree = "<group>"; };
-		E75C926D22BB6B05006EF5EC /* ESJSONDictionaryResponseSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESJSONDictionaryResponseSerializer.m; sourceTree = "<group>"; };
+		097A40E159499E810A8074C9 /* ESAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESAPIClient.h; sourceTree = "<group>"; };
+		1D231D70AD94F6365CE7AFEE /* ESJSONDictionaryResponseSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESJSONDictionaryResponseSerializer.h; sourceTree = "<group>"; };
+		213049BE530AFE4FCFF49D9D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2433A5C570E3B494B27DB848 /* ESJSONResponseSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESJSONResponseSerializer.h; sourceTree = "<group>"; };
+		2DF7C3D51B58E863FD312E16 /* libPods-iOS Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		529589BDB756C2B7DA28ABD4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		55ACB30FFBF56DEE3393C93B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5AD55B7A27358204148B9EA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		608A4C0B6DC9C9A2E6DD90CB /* ESAPIClient.a */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = archive.ar; path = ESAPIClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EC4CBFB9BFEBDA02ECD562C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		882051059D4D5CDFAE4B87C4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8DAF0889E126B0D0BF919D4B /* Pods-iOS Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Example.debug.xcconfig"; path = "Target Support Files/Pods-iOS Example/Pods-iOS Example.debug.xcconfig"; sourceTree = "<group>"; };
+		9D35214F61003CE2B034DAA1 /* ESJSONResponseSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESJSONResponseSerializer.m; sourceTree = "<group>"; };
+		A783B924E406CB32540116A5 /* Pods-iOS Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Example.release.xcconfig"; path = "Target Support Files/Pods-iOS Example/Pods-iOS Example.release.xcconfig"; sourceTree = "<group>"; };
+		B0B7EB52359A72E735169FF2 /* iOS Example.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2E5DFF6DFF1567C0526EC31 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D3135937EAC14B48F854576D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F6EB5B04527854365D1385EE /* ESJSONDictionaryResponseSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESJSONDictionaryResponseSerializer.m; sourceTree = "<group>"; };
+		FAF31B9C0665A4A93C6F9A96 /* ESAPIClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESAPIClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFrameworksBuildPhase section */
+		4A3D22C67D7AE18282452F8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				179DA922040EEA5E7D7DDD3D /* libPods-iOS Example.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA1BEAF6B7024CEA6ECCFF5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
-		E75C925722BB685B006EF5EC = {
+		0F8486F6FEFB844295331B29 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E75C926222BB685B006EF5EC /* ESAPIClient */,
+				2DF7C3D51B58E863FD312E16 /* libPods-iOS Example.a */,
 			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E75C926222BB685B006EF5EC /* ESAPIClient */ = {
+		5932895BCF2437D9F9B3F323 /* iOS Example */ = {
 			isa = PBXGroup;
 			children = (
-				E75C926322BB685B006EF5EC /* ESAPIClient.h */,
-				E75C926422BB685B006EF5EC /* ESAPIClient.m */,
-				E75C926C22BB6B05006EF5EC /* ESJSONDictionaryResponseSerializer.h */,
-				E75C926D22BB6B05006EF5EC /* ESJSONDictionaryResponseSerializer.m */,
-				E74692862327AC8600126D49 /* ESJSONResponseSerializer.h */,
-				E74692872327AC8600126D49 /* ESJSONResponseSerializer.m */,
+				7EC4CBFB9BFEBDA02ECD562C /* AppDelegate.h */,
+				529589BDB756C2B7DA28ABD4 /* AppDelegate.m */,
+				55ACB30FFBF56DEE3393C93B /* Assets.xcassets */,
+				5AD55B7A27358204148B9EA9 /* Info.plist */,
+				18330FDA89939D2BDD31913C /* LaunchScreen.storyboard */,
+				213049BE530AFE4FCFF49D9D /* main.m */,
+				882051059D4D5CDFAE4B87C4 /* ViewController.h */,
+				C2E5DFF6DFF1567C0526EC31 /* ViewController.m */,
+			);
+			path = "iOS Example";
+			sourceTree = "<group>";
+		};
+		5C837AD22537BFA8AC10D423 = {
+			isa = PBXGroup;
+			children = (
+				61EBE3B131FE40031839A9AA /* ESAPIClient */,
+				B1E58B9ED5FEF6C2D183AB4B /* Examples */,
+				8B8FC8A3E8BB3C68FB121C97 /* Products */,
+				C9F5F1908771DB83F0551AB3 /* Pods */,
+				0F8486F6FEFB844295331B29 /* Frameworks */,
+			);
+			indentWidth = 4;
+			sourceTree = "<group>";
+			tabWidth = 4;
+			usesTabs = 0;
+		};
+		61EBE3B131FE40031839A9AA /* ESAPIClient */ = {
+			isa = PBXGroup;
+			children = (
+				097A40E159499E810A8074C9 /* ESAPIClient.h */,
+				FAF31B9C0665A4A93C6F9A96 /* ESAPIClient.m */,
+				1D231D70AD94F6365CE7AFEE /* ESJSONDictionaryResponseSerializer.h */,
+				F6EB5B04527854365D1385EE /* ESJSONDictionaryResponseSerializer.m */,
+				2433A5C570E3B494B27DB848 /* ESJSONResponseSerializer.h */,
+				9D35214F61003CE2B034DAA1 /* ESJSONResponseSerializer.m */,
 			);
 			path = ESAPIClient;
 			sourceTree = "<group>";
 		};
+		8B8FC8A3E8BB3C68FB121C97 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				608A4C0B6DC9C9A2E6DD90CB /* ESAPIClient.a */,
+				B0B7EB52359A72E735169FF2 /* iOS Example.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B1E58B9ED5FEF6C2D183AB4B /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				5932895BCF2437D9F9B3F323 /* iOS Example */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
+		C9F5F1908771DB83F0551AB3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8DAF0889E126B0D0BF919D4B /* Pods-iOS Example.debug.xcconfig */,
+				A783B924E406CB32540116A5 /* Pods-iOS Example.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
+/* Begin PBXNativeTarget section */
+		D6490B1AAB73749F1B843EF9 /* iOS Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 913D42A7ABEEC20CE3340450 /* Build configuration list for PBXNativeTarget "iOS Example" */;
+			buildPhases = (
+				AFD92446CED63D00E6A7EBB7 /* [CP] Check Pods Manifest.lock */,
+				75F68EB9164AEE17E0236D30 /* Sources */,
+				ED71DC2F6D3FE733F1696D50 /* Resources */,
+				4A3D22C67D7AE18282452F8B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iOS Example";
+			productName = "iOS Example";
+			productReference = B0B7EB52359A72E735169FF2 /* iOS Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F84868087ADBFD41A102AC13 /* ESAPIClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67D0E4F722F71D668A3DC21A /* Build configuration list for PBXNativeTarget "ESAPIClient" */;
+			buildPhases = (
+				3F0BBD2399A28E7DF7BBBFA5 /* CopyFiles */,
+				389AA2029516A4100F27BD80 /* Sources */,
+				BA1BEAF6B7024CEA6ECCFF5C /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ESAPIClient;
+			productName = ESAPIClient;
+			productReference = 608A4C0B6DC9C9A2E6DD90CB /* ESAPIClient.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
 /* Begin PBXProject section */
-		E75C925822BB685B006EF5EC /* Project object */ = {
+		83993318520BAC16DB6B8BA9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = ES;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "https://0x123.com";
+				TargetAttributes = {
+					D6490B1AAB73749F1B843EF9 = {
+						DevelopmentTeam = B86YZY7YJX;
+					};
+				};
 			};
-			buildConfigurationList = E75C925B22BB685B006EF5EC /* Build configuration list for PBXProject "ESAPIClient" */;
-			compatibilityVersion = "Xcode 9.3";
+			buildConfigurationList = 028ABF652E43DE252F0DD3AF /* Build configuration list for PBXProject "ESAPIClient" */;
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
+				Base,
 			);
-			mainGroup = E75C925722BB685B006EF5EC;
-			productRefGroup = E75C925722BB685B006EF5EC;
+			mainGroup = 5C837AD22537BFA8AC10D423;
+			productRefGroup = 8B8FC8A3E8BB3C68FB121C97 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				F84868087ADBFD41A102AC13 /* ESAPIClient */,
+				D6490B1AAB73749F1B843EF9 /* iOS Example */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		ED71DC2F6D3FE733F1696D50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37F29F3FEFA5EE2D11982866 /* Assets.xcassets in Resources */,
+				3E92253F3582B208110E651D /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AFD92446CED63D00E6A7EBB7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOS Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		389AA2029516A4100F27BD80 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3ED10CABCAAC9DF269DAA57E /* ESAPIClient.m in Sources */,
+				8F24A5F0D04A2BE2FF91A4D9 /* ESJSONDictionaryResponseSerializer.m in Sources */,
+				3E7A715DF69BBB08D7D9FFD5 /* ESJSONResponseSerializer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75F68EB9164AEE17E0236D30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				213FBDF26782F0AC03AFD452 /* AppDelegate.m in Sources */,
+				27C2CFCFD28CDDDB813E8721 /* ViewController.m in Sources */,
+				F4928D3919459892212AAD06 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		18330FDA89939D2BDD31913C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3135937EAC14B48F854576D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		E75C926722BB685B006EF5EC /* Debug */ = {
+		31B6AF2BF4A4CC56E331FFC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -94,8 +329,8 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -104,8 +339,8 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
 					"$(inherited)",
+					"DEBUG=1",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -113,25 +348,32 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MARKETING_VERSION = 1.5.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
-		E75C926822BB685B006EF5EC /* Release */ = {
+		32C98D2F22F9B76C5ADDA5D0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -153,8 +395,8 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -166,27 +408,116 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MARKETING_VERSION = 1.5.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		384A3D6760979CC67C4FACD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DAF0889E126B0D0BF919D4B /* Pods-iOS Example.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = B86YZY7YJX;
+				INFOPLIST_FILE = "Examples/iOS Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.0x123.ESAPIClient.iOSExample;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		62CD114F087240B779D56E99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A783B924E406CB32540116A5 /* Pods-iOS Example.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = B86YZY7YJX;
+				INFOPLIST_FILE = "Examples/iOS Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.0x123.ESAPIClient.iOSExample;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AB6B45182BE6A9048C917501 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.0x123.ESAPIClient.ESAPIClient;
+				PRODUCT_NAME = "ESAPIClient-iOS";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B768B408740E6CCF3B5FD629 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.0x123.ESAPIClient.ESAPIClient;
+				PRODUCT_NAME = "ESAPIClient-iOS";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E75C925B22BB685B006EF5EC /* Build configuration list for PBXProject "ESAPIClient" */ = {
+		028ABF652E43DE252F0DD3AF /* Build configuration list for PBXProject "ESAPIClient" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E75C926722BB685B006EF5EC /* Debug */,
-				E75C926822BB685B006EF5EC /* Release */,
+				31B6AF2BF4A4CC56E331FFC4 /* Debug */,
+				32C98D2F22F9B76C5ADDA5D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
+		};
+		67D0E4F722F71D668A3DC21A /* Build configuration list for PBXNativeTarget "ESAPIClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB6B45182BE6A9048C917501 /* Debug */,
+				B768B408740E6CCF3B5FD629 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		913D42A7ABEEC20CE3340450 /* Build configuration list for PBXNativeTarget "iOS Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				384A3D6760979CC67C4FACD4 /* Debug */,
+				62CD114F087240B779D56E99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = E75C925822BB685B006EF5EC /* Project object */;
+	rootObject = 83993318520BAC16DB6B8BA9 /* Project object */;
 }
