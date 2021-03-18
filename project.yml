@@ -32,7 +32,7 @@ targetTemplates:
 
 targets:
   ESAPIClient:
-    type: library.static
+    type: framework
     platform: iOS
     sources: [ESAPIClient]
     settings:

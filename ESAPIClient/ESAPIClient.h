@@ -6,7 +6,7 @@
 //  Copyright © 2019 https://0x123.com. All rights reserved.
 //
 
-#import "ESJSONDictionaryResponseSerializer.h"
+#import <ESAPIClient/ESJSONDictionaryResponseSerializer.h>
 
 #import <AFNetworking/AFHTTPSessionManager.h>
 
