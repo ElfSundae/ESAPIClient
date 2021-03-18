@@ -10,12 +10,12 @@
 		213FBDF26782F0AC03AFD452 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 529589BDB756C2B7DA28ABD4 /* AppDelegate.m */; };
 		233EA094A86E461DA0C80624 /* ESJSONDictionaryResponseSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D231D70AD94F6365CE7AFEE /* ESJSONDictionaryResponseSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		27C2CFCFD28CDDDB813E8721 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E5DFF6DFF1567C0526EC31 /* ViewController.m */; };
+		2B35FFA814596009BBF1B0ED /* libPods-iOS Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D24D79E6AE976A34AB6E6BE2 /* libPods-iOS Example.a */; };
 		37F29F3FEFA5EE2D11982866 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55ACB30FFBF56DEE3393C93B /* Assets.xcassets */; };
 		3E7A715DF69BBB08D7D9FFD5 /* ESJSONResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D35214F61003CE2B034DAA1 /* ESJSONResponseSerializer.m */; };
 		3E92253F3582B208110E651D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18330FDA89939D2BDD31913C /* LaunchScreen.storyboard */; };
 		3ED10CABCAAC9DF269DAA57E /* ESAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF31B9C0665A4A93C6F9A96 /* ESAPIClient.m */; };
 		8F24A5F0D04A2BE2FF91A4D9 /* ESJSONDictionaryResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EB5B04527854365D1385EE /* ESJSONDictionaryResponseSerializer.m */; };
-		D766FF924D8F0806CAA3B283 /* libPods-iOS Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E08C7E82A8BF90C86EC1D976 /* libPods-iOS Example.a */; };
 		E1DB808C2491524D3C2B6984 /* ESJSONResponseSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2433A5C570E3B494B27DB848 /* ESJSONResponseSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F4928D3919459892212AAD06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 213049BE530AFE4FCFF49D9D /* main.m */; };
 		F4BB28D42DACE33A53A2B0AA /* ESAPIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 097A40E159499E810A8074C9 /* ESAPIClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,62 +23,45 @@
 
 /* Begin PBXFileReference section */
 		097A40E159499E810A8074C9 /* ESAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESAPIClient.h; sourceTree = "<group>"; };
+		122526A37DA1790FCCEACB2D /* Pods-iOS Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Example.debug.xcconfig"; path = "Target Support Files/Pods-iOS Example/Pods-iOS Example.debug.xcconfig"; sourceTree = "<group>"; };
 		1D231D70AD94F6365CE7AFEE /* ESJSONDictionaryResponseSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESJSONDictionaryResponseSerializer.h; sourceTree = "<group>"; };
 		213049BE530AFE4FCFF49D9D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2433A5C570E3B494B27DB848 /* ESJSONResponseSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESJSONResponseSerializer.h; sourceTree = "<group>"; };
 		529589BDB756C2B7DA28ABD4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		55ACB30FFBF56DEE3393C93B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AD55B7A27358204148B9EA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		714E83C0B84F046778B1E67A /* Pods-iOS Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Example.release.xcconfig"; path = "Target Support Files/Pods-iOS Example/Pods-iOS Example.release.xcconfig"; sourceTree = "<group>"; };
 		7EC4CBFB9BFEBDA02ECD562C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		882051059D4D5CDFAE4B87C4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8DCB9C66C34DC709185ADB75 /* ESAPIClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ESAPIClient.framework; path = "ESAPIClient-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A8377DE12DEEFD526DC63A3 /* Pods-iOS Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Example.release.xcconfig"; path = "Target Support Files/Pods-iOS Example/Pods-iOS Example.release.xcconfig"; sourceTree = "<group>"; };
+		8DCB9C66C34DC709185ADB75 /* ESAPIClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ESAPIClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D35214F61003CE2B034DAA1 /* ESJSONResponseSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESJSONResponseSerializer.m; sourceTree = "<group>"; };
 		B0B7EB52359A72E735169FF2 /* iOS Example.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2E5DFF6DFF1567C0526EC31 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D24D79E6AE976A34AB6E6BE2 /* libPods-iOS Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3135937EAC14B48F854576D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E08C7E82A8BF90C86EC1D976 /* libPods-iOS Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE07193F0212F24D871D1229 /* Pods-iOS Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Example.debug.xcconfig"; path = "Target Support Files/Pods-iOS Example/Pods-iOS Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F6EB5B04527854365D1385EE /* ESJSONDictionaryResponseSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESJSONDictionaryResponseSerializer.m; sourceTree = "<group>"; };
 		FAF31B9C0665A4A93C6F9A96 /* ESAPIClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESAPIClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		993C392763419EFF14C76B15 /* Frameworks */ = {
+		249130A58E079A220C2C87D5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EC7218090BF94DD51C3A48B3 /* Frameworks */ = {
+		2735194B31F385E0B96BDCEC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D766FF924D8F0806CAA3B283 /* libPods-iOS Example.a in Frameworks */,
+				2B35FFA814596009BBF1B0ED /* libPods-iOS Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1201571469FE0BEABB77D486 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				EE07193F0212F24D871D1229 /* Pods-iOS Example.debug.xcconfig */,
-				9A8377DE12DEEFD526DC63A3 /* Pods-iOS Example.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		12F2EECE64BC3A4934C1F173 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E08C7E82A8BF90C86EC1D976 /* libPods-iOS Example.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		5932895BCF2437D9F9B3F323 /* iOS Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,8 +83,8 @@
 				61EBE3B131FE40031839A9AA /* ESAPIClient */,
 				B1E58B9ED5FEF6C2D183AB4B /* Examples */,
 				8B8FC8A3E8BB3C68FB121C97 /* Products */,
-				1201571469FE0BEABB77D486 /* Pods */,
-				12F2EECE64BC3A4934C1F173 /* Frameworks */,
+				B76A4F866573A7E9FDD24C40 /* Pods */,
+				6F6A472502E36C8CC6C2D44C /* Frameworks */,
 			);
 			indentWidth = 4;
 			sourceTree = "<group>";
@@ -121,6 +104,14 @@
 			path = ESAPIClient;
 			sourceTree = "<group>";
 		};
+		6F6A472502E36C8CC6C2D44C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D24D79E6AE976A34AB6E6BE2 /* libPods-iOS Example.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8B8FC8A3E8BB3C68FB121C97 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +127,16 @@
 				5932895BCF2437D9F9B3F323 /* iOS Example */,
 			);
 			path = Examples;
+			sourceTree = "<group>";
+		};
+		B76A4F866573A7E9FDD24C40 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				122526A37DA1790FCCEACB2D /* Pods-iOS Example.debug.xcconfig */,
+				714E83C0B84F046778B1E67A /* Pods-iOS Example.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,10 +159,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 913D42A7ABEEC20CE3340450 /* Build configuration list for PBXNativeTarget "iOS Example" */;
 			buildPhases = (
-				F8B937FF8BC99D906DFD16D5 /* [CP] Check Pods Manifest.lock */,
+				24F59AA427700E893D7E1CF4 /* [CP] Check Pods Manifest.lock */,
 				75F68EB9164AEE17E0236D30 /* Sources */,
 				ED71DC2F6D3FE733F1696D50 /* Resources */,
-				EC7218090BF94DD51C3A48B3 /* Frameworks */,
+				2735194B31F385E0B96BDCEC /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -178,7 +179,7 @@
 			buildPhases = (
 				CE85FB25B749F0F143ED66DE /* Headers */,
 				389AA2029516A4100F27BD80 /* Sources */,
-				993C392763419EFF14C76B15 /* Frameworks */,
+				249130A58E079A220C2C87D5 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,7 +197,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = ES;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "https://0x123.com";
 				TargetAttributes = {
 					D6490B1AAB73749F1B843EF9 = {
@@ -236,7 +237,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		F8B937FF8BC99D906DFD16D5 /* [CP] Check Pods Manifest.lock */ = {
+		24F59AA427700E893D7E1CF4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -350,7 +351,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MARKETING_VERSION = 1.6.0;
+				MARKETING_VERSION = 1.6.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -413,7 +414,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MARKETING_VERSION = 1.6.0;
+				MARKETING_VERSION = 1.6.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -428,7 +429,7 @@
 		};
 		384A3D6760979CC67C4FACD4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE07193F0212F24D871D1229 /* Pods-iOS Example.debug.xcconfig */;
+			baseConfigurationReference = 122526A37DA1790FCCEACB2D /* Pods-iOS Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -446,7 +447,7 @@
 		};
 		62CD114F087240B779D56E99 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A8377DE12DEEFD526DC63A3 /* Pods-iOS Example.release.xcconfig */;
+			baseConfigurationReference = 714E83C0B84F046778B1E67A /* Pods-iOS Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

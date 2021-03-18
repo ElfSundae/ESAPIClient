@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name        = 'ESAPIClient'
-  s.version     = '1.6.0'
+  s.version     = '1.6.1'
   s.license     = 'MIT'
   s.summary     = 'ESAPIClient is an API client library built on top of AFNetworking.'
   s.homepage    = 'https://github.com/ElfSundae/ESAPIClient'
